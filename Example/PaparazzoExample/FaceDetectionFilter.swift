@@ -21,7 +21,11 @@ public class FaceDetectionFilter: Filter {
         let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
         let ciDetector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: options)
         
-        let ciImage = CIImage(cgImage: sourceImage.cgImage!)
+        guard let cgImage = sourceImage.cgImage else {
+            completion(sourceImage)
+            return
+        }
+        let ciImage = CIImage(cgImage: cgImage)
         
         let features = ciDetector?.features(in: ciImage)
         let ciImageSize = ciImage.extent.size
@@ -44,8 +48,8 @@ public class FaceDetectionFilter: Filter {
             faceRect.origin.x += offsetX
             faceRect.origin.y += offsetY
             
-            let image = self?.cropImage(sourceImage: sourceImage, rect: faceRect)
-            self?.blurImage(image: image!).draw(in: faceRect)
+            let image = sourceImage.cropImage(rect: faceRect)
+            image.blurImage(intensity: 6.0).draw(in: faceRect)
         }
         
         let resultImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -53,27 +57,4 @@ public class FaceDetectionFilter: Filter {
         completion(resultImage!)
     }
     
-    private func cropImage(sourceImage: UIImage, rect: CGRect) -> UIImage {
-        
-        var rect = rect
-        rect.origin.x *= sourceImage.scale
-        rect.origin.y *= sourceImage.scale
-        rect.size.width *= sourceImage.scale
-        rect.size.height *= sourceImage.scale
-        
-        let image = sourceImage.cgImage?.cropping(to: rect)
-        return UIImage(cgImage: image!, scale: sourceImage.scale, orientation: sourceImage.imageOrientation)
-    }
-    
-    private func blurImage(image: UIImage) -> UIImage {
-        
-        let context = CIContext()
-        let inputImage = CIImage(cgImage: image.cgImage!)
-        let filter = CIFilter(name: "CIGaussianBlur")
-        filter?.setValue(inputImage, forKey: kCIInputImageKey)
-        filter?.setValue(6.0, forKey: "inputRadius")
-        let outputImage = filter?.value(forKey: kCIOutputImageKey)
-        
-        return UIImage(cgImage: context.createCGImage(outputImage as! CIImage, from: inputImage.extent)!)
-    }
 }

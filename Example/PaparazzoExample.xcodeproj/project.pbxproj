@@ -44,6 +44,8 @@
 		25A489CB1E656B2D00CC431B /* Latoto-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E57EB1E6565890009A288 /* Latoto-Semibold.ttf */; };
 		25A489CC1E656B2D00CC431B /* Latoto-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E57EC1E6565890009A288 /* Latoto-SemiboldItalic.ttf */; };
 		68D619AA8C30AB479F72525D /* Pods_PaparazzoExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2DAC113521ADEBFF8A22F1 /* Pods_PaparazzoExample.framework */; };
+		EF8240171ECF5CC8005965DC /* LicensePlateDetectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8240161ECF5CC8005965DC /* LicensePlateDetectionFilter.swift */; };
+		EF8240191ECF5D9E005965DC /* UIImage+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8240181ECF5D9E005965DC /* UIImage+Transform.swift */; };
 		EFA7610E1E829434000EB296 /* ItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA7610D1E829434000EB296 /* ItemProvider.swift */; };
 		EFA7610F1E829569000EB296 /* ItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA7610D1E829434000EB296 /* ItemProvider.swift */; };
 		F2F50FC61E6C9F60006F9171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F50FC51E6C9F60006F9171 /* AppDelegate.swift */; };
@@ -97,6 +99,8 @@
 		AD2DAC113521ADEBFF8A22F1 /* Pods_PaparazzoExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaparazzoExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9A4E214165A8FB30A7CE203 /* Pods_PaparazzoExample_NoMarshroute.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaparazzoExample_NoMarshroute.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E747D4112A5EEA41675E0267 /* Pods-PaparazzoExample_Storyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaparazzoExample_Storyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaparazzoExample_Storyboard/Pods-PaparazzoExample_Storyboard.release.xcconfig"; sourceTree = "<group>"; };
+		EF8240161ECF5CC8005965DC /* LicensePlateDetectionFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensePlateDetectionFilter.swift; sourceTree = "<group>"; };
+		EF8240181ECF5D9E005965DC /* UIImage+Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Transform.swift"; sourceTree = "<group>"; };
 		EFA7610D1E829434000EB296 /* ItemProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemProvider.swift; sourceTree = "<group>"; };
 		F2F50FC31E6C9F60006F9171 /* PaparazzoExample_Storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaparazzoExample_Storyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F50FC51E6C9F60006F9171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				18705C5D1ECF290B00380DF4 /* FaceDetectionFilter.swift */,
+				EF8240161ECF5CC8005965DC /* LicensePlateDetectionFilter.swift */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				251E57E71E6565890009A288 /* Fonts */,
 				251E57ED1E6565890009A288 /* MarshrouteHelpers */,
 				251E57CF1E65651F0009A288 /* Info.plist */,
+				EF8240181ECF5D9E005965DC /* UIImage+Transform.swift */,
 			);
 			path = PaparazzoExample;
 			sourceTree = "<group>";
@@ -389,7 +395,8 @@
 				TargetAttributes = {
 					251E57BF1E65651F0009A288 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 4B3PZ545KB;
+						ProvisioningStyle = Automatic;
 					};
 					25A489B01E656A2B00CC431B = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -610,11 +617,13 @@
 			files = (
 				251E57FB1E6565890009A288 /* ExampleViewInput.swift in Sources */,
 				251E57FA1E6565890009A288 /* ExampleViewController.swift in Sources */,
+				EF8240171ECF5CC8005965DC /* LicensePlateDetectionFilter.swift in Sources */,
 				251E57F21E6565890009A288 /* ExampleAssembly.swift in Sources */,
 				251E57F41E6565890009A288 /* ExampleInteractor.swift in Sources */,
 				251E58011E6565890009A288 /* MarshrouteFacade.swift in Sources */,
 				251E58021E6565890009A288 /* NavigationController.swift in Sources */,
 				251E57C41E65651F0009A288 /* AppDelegate.swift in Sources */,
+				EF8240191ECF5D9E005965DC /* UIImage+Transform.swift in Sources */,
 				251E57F81E6565890009A288 /* ExampleRouterImpl.swift in Sources */,
 				18705C5E1ECF290B00380DF4 /* FaceDetectionFilter.swift in Sources */,
 				251E57F71E6565890009A288 /* ExampleRouter.swift in Sources */,
@@ -773,11 +782,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4B3PZ545KB;
 				INFOPLIST_FILE = PaparazzoExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.avito.PaparazzoExample;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.avito.PaparazzoExample.enterprise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -789,11 +799,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4B3PZ545KB;
 				INFOPLIST_FILE = PaparazzoExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.avito.PaparazzoExample;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.avito.PaparazzoExample.enterprise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -809,7 +820,7 @@
 				INFOPLIST_FILE = PaparazzoExample_NoMarshroute/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.avito.PaparazzoExample-NoMarshroute";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.avito.PaparazzoExample-NoMarshroute.enterprise";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -825,7 +836,7 @@
 				INFOPLIST_FILE = PaparazzoExample_NoMarshroute/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.avito.PaparazzoExample-NoMarshroute";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.avito.PaparazzoExample-NoMarshroute.enterprise";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -840,7 +851,7 @@
 				INFOPLIST_FILE = PaparazzoExample_Storyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.avito.PaparazzoExample-Storyboard";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.avito.PaparazzoExample-Storyboard.enterprise";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -855,7 +866,7 @@
 				INFOPLIST_FILE = PaparazzoExample_Storyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.avito.PaparazzoExample-Storyboard";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.avito.PaparazzoExample-Storyboard.enterprise";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
