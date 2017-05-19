@@ -16,6 +16,7 @@ protocol MediaPickerRouter: class {
     
     func showFiltersModule(
         forImage: ImageSource,
+        filters: [Filter]?,
         configuration: (FiltersModule) -> ()
     )
     

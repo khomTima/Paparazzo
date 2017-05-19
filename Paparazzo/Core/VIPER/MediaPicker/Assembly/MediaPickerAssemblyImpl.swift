@@ -19,6 +19,7 @@ public final class MediaPickerAssemblyImpl: MediaPickerAssembly {
     
     public func module(
         items: [MediaPickerItem],
+        filters: [Filter]?,
         selectedItem: MediaPickerItem?,
         maxItemsCount: Int?,
         cropEnabled: Bool,
@@ -28,6 +29,7 @@ public final class MediaPickerAssemblyImpl: MediaPickerAssembly {
     {
         let interactor = MediaPickerInteractorImpl(
             items: items,
+            filters: filters,
             selectedItem: selectedItem,
             maxItemsCount: maxItemsCount,
             cropCanvasSize: cropCanvasSize,

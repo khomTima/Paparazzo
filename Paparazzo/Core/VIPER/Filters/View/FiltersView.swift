@@ -56,7 +56,7 @@ final class FiltersView: UIView {
             left: bounds.left,
             right: bounds.right,
             bottom: bounds.bottom,
-            height: max(controlsMinHeight, bounds.size.height - bounds.size.width / 0.75)   // оставляем вверху место под фотку 3:4
+            height: controlsMinHeight + 50
         )
         
         previewView.layout(

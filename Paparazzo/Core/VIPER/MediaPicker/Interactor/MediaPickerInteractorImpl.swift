@@ -12,8 +12,11 @@ final class MediaPickerInteractorImpl: MediaPickerInteractor {
     private var photoLibraryItems = [PhotoLibraryItem]()
     private var selectedItem: MediaPickerItem?
     
+    let filters: [Filter]?
+    
     init(
         items: [MediaPickerItem],
+        filters: [Filter]?,
         selectedItem: MediaPickerItem?,
         maxItemsCount: Int?,
         cropCanvasSize: CGSize,
@@ -21,6 +24,7 @@ final class MediaPickerInteractorImpl: MediaPickerInteractor {
         latestLibraryPhotoProvider: PhotoLibraryLatestPhotoProvider
     ) {
         self.items = items
+        self.filters = filters
         self.selectedItem = selectedItem
         self.maxItemsCount = maxItemsCount
         self.cropCanvasSize = cropCanvasSize

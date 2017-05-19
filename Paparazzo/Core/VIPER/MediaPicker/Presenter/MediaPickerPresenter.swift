@@ -378,7 +378,7 @@ final class MediaPickerPresenter: MediaPickerModule {
     }
     
     private func showFiltersModule(forItem item: MediaPickerItem) {
-        router.showFiltersModule(forImage: item.image) { module in
+        router.showFiltersModule(forImage: item.image, filters: interactor.filters) { module in
             module.onDiscard = { [weak self] in
                 self?.router.focusOnCurrentModule()
             }

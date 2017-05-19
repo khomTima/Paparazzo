@@ -54,6 +54,7 @@ final class MediaPickerMarshrouteRouter: BaseRouter, MediaPickerRouter {
     
     func showFiltersModule(
         forImage image: ImageSource,
+        filters: [Filter]?,
         configuration: (FiltersModule) -> ())
     {
         pushViewControllerDerivedFrom({ _ in
@@ -62,6 +63,7 @@ final class MediaPickerMarshrouteRouter: BaseRouter, MediaPickerRouter {
             
             return assembly.module(
                 image: image,
+                filters: filters,
                 configuration: configuration
             )
             

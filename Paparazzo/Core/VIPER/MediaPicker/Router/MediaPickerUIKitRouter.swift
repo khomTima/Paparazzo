@@ -53,12 +53,14 @@ final class MediaPickerUIKitRouter: BaseUIKitRouter, MediaPickerRouter {
     
     func showFiltersModule(
         forImage image: ImageSource,
+        filters: [Filter]?,
         configuration: (FiltersModule) -> ())
     {
         let assembly = assemblyFactory.filtersAssembly()
         
         let viewController = assembly.module(
             image: image,
+            filters: filters,
             configuration: configuration
         )
         

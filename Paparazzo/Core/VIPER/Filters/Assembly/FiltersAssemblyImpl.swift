@@ -11,10 +11,14 @@ public final class FiltersAssemblyImpl: FiltersAssembly {
     
     public func module(
         image: ImageSource,
+        filters: [Filter]?,
         configuration: (FiltersModule) -> ()
     ) -> UIViewController {
 
-        let interactor = FiltersInteractorImpl(image: image)
+        let interactor = FiltersInteractorImpl(
+            image: image,
+            filters: filters
+        )
 
         let presenter = FiltersPresenter(
             interactor: interactor
