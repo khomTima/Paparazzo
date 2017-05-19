@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		088535F351074F52B19B1688 /* Pods_PaparazzoExample_NoMarshroute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A4E214165A8FB30A7CE203 /* Pods_PaparazzoExample_NoMarshroute.framework */; };
 		08BB7920D2F1F31E8D8C1760 /* Pods_PaparazzoExample_Storyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B16F0AF7B8CAAE81DB10090 /* Pods_PaparazzoExample_Storyboard.framework */; };
+		18705C5E1ECF290B00380DF4 /* FaceDetectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18705C5D1ECF290B00380DF4 /* FaceDetectionFilter.swift */; };
 		251E57C41E65651F0009A288 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E57C31E65651F0009A288 /* AppDelegate.swift */; };
 		251E57F01E6565890009A288 /* AppSpecificUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E57D51E6565890009A288 /* AppSpecificUITheme.swift */; };
 		251E57F21E6565890009A288 /* ExampleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E57D91E6565890009A288 /* ExampleAssembly.swift */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		0CD08CDB3C698AABC02FE1C4 /* Pods-PaparazzoExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaparazzoExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaparazzoExample/Pods-PaparazzoExample.release.xcconfig"; sourceTree = "<group>"; };
+		18705C5D1ECF290B00380DF4 /* FaceDetectionFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceDetectionFilter.swift; sourceTree = "<group>"; };
 		251E57C01E65651F0009A288 /* PaparazzoExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaparazzoExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		251E57C31E65651F0009A288 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		251E57CF1E65651F0009A288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18705C5C1ECF28EA00380DF4 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				18705C5D1ECF290B00380DF4 /* FaceDetectionFilter.swift */,
+			);
+			name = Filters;
+			sourceTree = "<group>";
+		};
 		251E57B71E65651F0009A288 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 		251E57C21E65651F0009A288 /* PaparazzoExample */ = {
 			isa = PBXGroup;
 			children = (
+				18705C5C1ECF28EA00380DF4 /* Filters */,
 				253169661E65698C006F1E95 /* Assets.xcassets */,
 				251E57C31E65651F0009A288 /* AppDelegate.swift */,
 				251E57D51E6565890009A288 /* AppSpecificUITheme.swift */,
@@ -602,6 +613,7 @@
 				251E58021E6565890009A288 /* NavigationController.swift in Sources */,
 				251E57C41E65651F0009A288 /* AppDelegate.swift in Sources */,
 				251E57F81E6565890009A288 /* ExampleRouterImpl.swift in Sources */,
+				18705C5E1ECF290B00380DF4 /* FaceDetectionFilter.swift in Sources */,
 				251E57F71E6565890009A288 /* ExampleRouter.swift in Sources */,
 				251E57F51E6565890009A288 /* ExampleInteractorImpl.swift in Sources */,
 				251E57F61E6565890009A288 /* ExamplePresenter.swift in Sources */,
