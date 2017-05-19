@@ -1,7 +1,6 @@
 import Foundation
 
 public protocol Filter {
-    
     var preview: UIImage { get }
     
     var title: String { get }

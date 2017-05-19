@@ -6,14 +6,25 @@ final class FiltersControlsView: UIView {
     
     private let discardButton = UIButton()
     private let confirmButton = UIButton()
-    private var filtersListView: FiltersListView
+    private var filtersListView = FiltersListView()
+    
+    var onFilterTap: ((_ filter: Filter) -> Void)? {
+        didSet {
+            filtersListView.onFilterTap = onFilterTap
+        }
+    }
+    
+    var filters = [Filter]() {
+        didSet {
+            filtersListView.filters = filters
+        }
+    }
     
     // MARK: - Constants
     
     // MARK: - Init
     
-    init(filters: [Filter]? = nil) {
-        filtersListView = FiltersListView(filters: filters ?? [])
+    init() {
         
         super.init(frame: .zero)
         
@@ -49,12 +60,12 @@ final class FiltersControlsView: UIView {
             left: bounds.left,
             right: bounds.right,
             top: bounds.top,
-            height: 140.0
+            height: 110.0
         )
         
         discardButton.layout(
             left: bounds.size.width * 0.25,
-            top: filtersListView.bottom,
+            top: filtersListView.bottom + 10.0,
             width: CGSize.minimumTapAreaSize.width,
             height: CGSize.minimumTapAreaSize.height
         )

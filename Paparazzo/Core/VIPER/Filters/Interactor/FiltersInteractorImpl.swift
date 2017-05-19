@@ -1,11 +1,11 @@
 import ImageSource
 
 final class FiltersInteractorImpl: FiltersInteractor {
-    private let originalImage: ImageSource
-    private let filters: [Filter]?
+    let image: ImageSource
+    let filters: [Filter]
     
-    init(image: ImageSource, filters: [Filter]?) {
-        self.originalImage = image
+    init(image: ImageSource, filters: [Filter]) {
+        self.image = image
         self.filters = filters
     }
 }

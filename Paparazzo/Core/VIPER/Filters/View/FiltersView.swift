@@ -5,9 +5,6 @@ final class FiltersView: UIView {
     
     // MARK: - Subviews
     
-    /// Вьюха, которая показывается до того, как будет доступна полная картинка для редактирования (чтобы избежать моргания)
-    private let splashView = UIImageView()
-    
     private let previewView = UIImageView()
     private let controlsView = FiltersControlsView()
     private let titleLabel = UILabel()
@@ -18,6 +15,12 @@ final class FiltersView: UIView {
         let iPhone5ScreenSize = CGSize(width: 320, height: 568)
         return iPhone5ScreenSize.height - iPhone5ScreenSize.width / 0.75
     }()
+    
+    var onFilterTap: ((_ filter: Filter) -> Void)? {
+        didSet {
+            controlsView.onFilterTap = onFilterTap
+        }
+    }
     
     // MARK: - Init
     
@@ -31,10 +34,9 @@ final class FiltersView: UIView {
             self?.onConfirmButtonTap?(self?.previewView.image?.cgImage)
         }
         
-        splashView.contentMode = .scaleAspectFill
+        previewView.contentMode = .scaleAspectFit
         
         addSubview(previewView)
-        addSubview(splashView)
         addSubview(controlsView)
         addSubview(titleLabel)
     }
@@ -56,7 +58,7 @@ final class FiltersView: UIView {
             left: bounds.left,
             right: bounds.right,
             bottom: bounds.bottom,
-            height: controlsMinHeight + 50
+            height: controlsMinHeight + 40
         )
         
         previewView.layout(
@@ -65,16 +67,6 @@ final class FiltersView: UIView {
             top: bounds.top,
             bottom: controlsView.top
         )
-        
-        layoutSplashView()
-    }
-    
-    private func layoutSplashView() {
-        
-        let height: CGFloat
-        
-        splashView.size = CGSize(width: bounds.size.width, height: bounds.size.height)
-        splashView.center = previewView.center
     }
     
     // MARK: - FiltersView
@@ -86,31 +78,16 @@ final class FiltersView: UIView {
     
     var onConfirmButtonTap: ((_ previewImage: CGImage?) -> ())?
     
-    func setImage(_ image: ImageSource, previewImage: ImageSource?, completion: (() -> ())?) {
-        
-        if let previewImage = previewImage {
-            
-            let screenSize = UIScreen.main.bounds.size
-            let previewOptions = ImageRequestOptions(size: .fitSize(screenSize), deliveryMode: .progressive)
-            
-            splashView.isHidden = false
-            
-            previewImage.requestImage(options: previewOptions) { [weak self] (result: ImageRequestResult<UIImage>) in
-                if let image = result.image, self?.splashView.isHidden == false {
-                    self?.splashView.image = image
-                }
-            }
-        }
+    func setImage(_ image: ImageSource, filters: [Filter]) {
         
         let options = ImageRequestOptions(size: .fullResolution, deliveryMode: .best)
+        
+        controlsView.filters = filters
         
         image.requestImage(options: options) { [weak self] (result: ImageRequestResult<UIImage>) in
             if let image = result.image {
                 self?.previewView.image = image
-                self?.splashView.isHidden = true
-                self?.splashView.image = nil
             }
-            completion?()
         }
     }
 

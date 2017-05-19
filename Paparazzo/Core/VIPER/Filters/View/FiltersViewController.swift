@@ -5,6 +5,12 @@ final class FiltersViewController: UIViewController, FiltersViewInput {
     
     private let filtersView = FiltersView()
     
+    var onFilterTap: ((_ filter: Filter) -> Void)? {
+        didSet {
+            filtersView.onFilterTap = onFilterTap
+        }
+    }
+    
     // MARK: - UIViewController
     
     override func loadView() {
@@ -43,8 +49,8 @@ final class FiltersViewController: UIViewController, FiltersViewInput {
         set { filtersView.onConfirmButtonTap = newValue }
     }
     
-    func setImage(_ image: ImageSource, previewImage: ImageSource?, completion: @escaping () -> ()) {
-        filtersView.setImage(image, previewImage: previewImage, completion: completion)
+    func setImage(_ image: ImageSource, filters: [Filter]) {
+        filtersView.setImage(image, filters: filters)
     }
     
     // MARK: - FiltersViewController

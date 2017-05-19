@@ -17,7 +17,7 @@ public final class FiltersAssemblyImpl: FiltersAssembly {
 
         let interactor = FiltersInteractorImpl(
             image: image,
-            filters: filters
+            filters: filters ?? []
         )
 
         let presenter = FiltersPresenter(

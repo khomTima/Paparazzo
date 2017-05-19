@@ -3,8 +3,11 @@ import Foundation
 final class FiltersListView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     private let collectionView: UICollectionView
     
-    init(filters: [Filter]) {
-        self.filters = filters
+    var onFilterTap: ((_ filter: Filter) -> Void)?
+    
+    init() {
+        
+        self.filters = []
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -12,11 +15,14 @@ final class FiltersListView: UIView, UICollectionViewDelegate, UICollectionViewD
         layout.minimumInteritemSpacing = 5.0
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
+        collectionView.backgroundColor = .clear
+        
         super.init(frame: .zero)
         
         collectionView.frame = bounds
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false
         
         collectionView.register(FilterCell.self, forCellWithReuseIdentifier: "FilterCell")
         
@@ -46,9 +52,15 @@ final class FiltersListView: UIView, UICollectionViewDelegate, UICollectionViewD
             (layout as! UICollectionViewFlowLayout).itemSize = CGSize(width: 90.0, height: bounds.height)
             collectionView.setCollectionViewLayout(layout, animated: false)
         }
+        collectionView.frame = bounds
     }
     
     // MARK: - UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        onFilterTap?(filters[indexPath.row])
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
     
     
     // MARK: - UICollectionViewDataSource

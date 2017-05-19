@@ -8,6 +8,11 @@ final class FilterCell: UICollectionViewCell {
         super.init(frame: frame)
         
         previewImageView.contentMode = .scaleAspectFill
+        previewImageView.clipsToBounds = true
+        previewImageView.layer.shouldRasterize = true
+        previewImageView.layer.rasterizationScale = UIScreen.main.nativeScale
+        previewImageView.layer.cornerRadius = 5.0
+
         contentView.addSubview(previewImageView)
         contentView.addSubview(titleLabel)
     }
@@ -31,7 +36,7 @@ final class FilterCell: UICollectionViewCell {
             top: titleLabel.bottom + 10.0,
             bottom: bounds.bottom,
             left: bounds.left,
-            right: bounds.right
+            width: bounds.width
         )
     }
     

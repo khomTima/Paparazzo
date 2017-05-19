@@ -1,5 +1,9 @@
 import Foundation
 import ImageSource
+import CoreGraphics
+import ImageIO
+import ImageSource
+import MobileCoreServices
 
 final class FiltersPresenter: FiltersModule {
 
@@ -34,6 +38,37 @@ final class FiltersPresenter: FiltersModule {
             self?.onDiscard?()
         }
         
+        view?.onFilterTap = { [weak self] filter in
+            guard let `self` = self else {
+                return
+            }
+            
+            let options = ImageRequestOptions(size: .fullResolution, deliveryMode: .best)
+            
+            self.interactor.image.requestImage(options: options) { (result: ImageRequestResult<UIImage>) in
+                if let image = result.image {
+                    filter.apply(result.image!, completion: { image in
+                        
+                        let path = (NSTemporaryDirectory() as NSString).appendingPathComponent("\(UUID().uuidString).jpg")
+                        let url = URL(fileURLWithPath: path)
+                        let destination = CGImageDestinationCreateWithURL(url as CFURL, kUTTypeJPEG, 1, nil)
+                        
+                        if let destination = destination {
+                            guard let cgImage = image.cgImage else { return }
+                            
+                            CGImageDestinationAddImage(destination, cgImage, nil)
+                            
+                            if CGImageDestinationFinalize(destination) {
+                                let imageSource = LocalImageSource(path: path, previewImage: image.cgImage)
+                                self.view?.setImage(imageSource, filters: self.interactor.filters)
+                            }
+                        }
+                        
+                    })
+                }
+            }
+        }
+        
         view?.onConfirmButtonTap = { [weak self] previewImage in
             if let previewImage = previewImage {
                 
@@ -41,5 +76,7 @@ final class FiltersPresenter: FiltersModule {
                 self?.onDiscard?()
             }
         }
+        
+        view?.setImage(interactor.image, filters: interactor.filters)
     }
 }
