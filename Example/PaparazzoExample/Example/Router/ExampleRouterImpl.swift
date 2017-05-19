@@ -13,6 +13,7 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
     func showMediaPicker(
         items: [MediaPickerItem],
         selectedItem: MediaPickerItem?,
+        filters: [Filter]?,
         maxItemsCount: Int?,
         cropCanvasSize: CGSize,
         configuration: (MediaPickerModule) -> ()
@@ -23,6 +24,7 @@ final class ExampleRouterImpl: BaseRouter, ExampleRouter {
             
             return assembly.module(
                 items: items,
+                filters: filters,
                 selectedItem: selectedItem,
                 maxItemsCount: maxItemsCount,
                 cropEnabled: true,

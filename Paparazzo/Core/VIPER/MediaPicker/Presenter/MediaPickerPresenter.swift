@@ -208,6 +208,14 @@ final class MediaPickerPresenter: MediaPickerModule {
             self?.removeSelectedItem()
         }
         
+        view?.onFiltersButtonTap = {
+            self?.interactor.selectedItem { item in
+                if let item = item {
+                    self?.showFiltersModule(forItem: item)
+                }
+            }
+        }
+        
         view?.onPreviewSizeDetermined = { previewSize in
             self?.cameraModuleInput.setPreviewImagesSizeForNewPhotos(previewSize)
         }
@@ -365,6 +373,18 @@ final class MediaPickerPresenter: MediaPickerModule {
                         self?.router.focusOnCurrentModule()
                     }
                 }
+            }
+        }
+    }
+    
+    private func showFiltersModule(forItem item: MediaPickerItem) {
+        router.showFiltersModule(forImage: item.image, filters: interactor.filters) { module in
+            module.onDiscard = { [weak self] in
+                self?.router.focusOnCurrentModule()
+            }
+            
+            module.onConfirm = { [weak self] image in
+                
             }
         }
     }

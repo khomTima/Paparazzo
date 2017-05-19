@@ -60,6 +60,7 @@ final class ExamplePresenter {
         self.router.showMediaPicker(
             items: items,
             selectedItem: items.last,
+            filters: [FilterDummy(), FilterDummy(), FilterDummy(), FilterDummy(), FilterDummy()],
             maxItemsCount: 20,
             cropCanvasSize: cropCanvasSize,
             configuration: { [weak self] module in

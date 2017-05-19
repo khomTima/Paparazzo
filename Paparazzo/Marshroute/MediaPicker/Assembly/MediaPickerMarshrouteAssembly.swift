@@ -4,6 +4,7 @@ import UIKit
 public protocol MediaPickerMarshrouteAssembly: class {
     func module(
         items: [MediaPickerItem],
+        filters: [Filter]?,
         selectedItem: MediaPickerItem?,
         maxItemsCount: Int?,
         cropEnabled: Bool,

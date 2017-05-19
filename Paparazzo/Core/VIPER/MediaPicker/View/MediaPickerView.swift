@@ -200,6 +200,11 @@ final class MediaPickerView: UIView {
         set { photoControlsView.onCropButtonTap = newValue }
     }
     
+    var onFiltersButtonTap: (() -> ())? {
+        get { return photoControlsView.onFiltersButtonTap }
+        set { photoControlsView.onFiltersButtonTap = newValue }
+    }
+    
     var onCameraThumbnailTap: (() -> ())? {
         get { return photoControlsView.onCameraButtonTap }
         set { photoControlsView.onCameraButtonTap = newValue }
@@ -441,7 +446,11 @@ final class MediaPickerView: UIView {
     }
     
     func setShowsCropButton(_ showsCropButton: Bool) {
-        photoControlsView.setShowsCropButton(showsCropButton)
+        if showsCropButton {
+            photoControlsView.mode.insert(.hasCropButton)
+        } else {
+            photoControlsView.mode.remove(.hasCropButton)
+        }
     }
     
     func reloadCamera() {

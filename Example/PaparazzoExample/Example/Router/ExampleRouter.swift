@@ -6,6 +6,7 @@ protocol ExampleRouter: class, RouterFocusable, RouterDismissable {
     func showMediaPicker(
         items: [MediaPickerItem],
         selectedItem: MediaPickerItem?,
+        filters: [Filter]?,
         maxItemsCount: Int?,
         cropCanvasSize: CGSize,
         configuration: (MediaPickerModule) -> ()

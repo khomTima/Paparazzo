@@ -3,7 +3,10 @@ import UIKit
 
 public final class MediaPickerMarshrouteAssemblyImpl: MediaPickerMarshrouteAssembly {
     
-    typealias AssemblyFactory = CameraAssemblyFactory & ImageCroppingAssemblyFactory & PhotoLibraryMarshrouteAssemblyFactory
+    typealias AssemblyFactory = CameraAssemblyFactory
+        & ImageCroppingAssemblyFactory
+        & PhotoLibraryMarshrouteAssemblyFactory
+        & FiltersAssemblyFactory
     
     private let assemblyFactory: AssemblyFactory
     private let theme: PaparazzoUITheme
@@ -17,6 +20,7 @@ public final class MediaPickerMarshrouteAssemblyImpl: MediaPickerMarshrouteAssem
     
     public func module(
         items: [MediaPickerItem],
+        filters: [Filter]?,
         selectedItem: MediaPickerItem?,
         maxItemsCount: Int?,
         cropEnabled: Bool,
@@ -27,6 +31,7 @@ public final class MediaPickerMarshrouteAssemblyImpl: MediaPickerMarshrouteAssem
     {
         let interactor = MediaPickerInteractorImpl(
             items: items,
+            filters: filters,
             selectedItem: selectedItem,
             maxItemsCount: maxItemsCount,
             cropCanvasSize: cropCanvasSize,
