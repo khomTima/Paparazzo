@@ -2,6 +2,8 @@ import ImageSource
 
 protocol MediaPickerInteractor: class {
     
+    var filters: [Filter]? { get }
+    
     func addItems(_: [MediaPickerItem], completion: @escaping (_ addedItems: [MediaPickerItem], _ canAddItems: Bool) -> ())
     func addPhotoLibraryItems(_: [PhotoLibraryItem], completion: @escaping (_ addedItems: [MediaPickerItem], _ canAddItems: Bool) -> ())
     

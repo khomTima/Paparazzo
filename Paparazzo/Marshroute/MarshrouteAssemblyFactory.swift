@@ -2,7 +2,8 @@ public final class MarshrouteAssemblyFactory:
     CameraAssemblyFactory,
     MediaPickerMarshrouteAssemblyFactory,
     ImageCroppingAssemblyFactory,
-    PhotoLibraryMarshrouteAssemblyFactory
+    PhotoLibraryMarshrouteAssemblyFactory,
+    FiltersAssemblyFactory
 {
     private let theme: PaparazzoUITheme
     
@@ -24,5 +25,9 @@ public final class MarshrouteAssemblyFactory:
 
     public func photoLibraryAssembly() -> PhotoLibraryMarshrouteAssembly {
         return PhotoLibraryMarshrouteAssemblyImpl(theme: theme)
+    }
+    
+    func filtersAssembly() -> FiltersAssembly {
+        return FiltersAssemblyImpl(theme: theme)
     }
 }

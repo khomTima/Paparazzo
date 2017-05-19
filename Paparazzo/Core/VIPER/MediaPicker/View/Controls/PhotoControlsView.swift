@@ -2,14 +2,28 @@ import UIKit
 
 final class PhotoControlsView: UIView {
     
+    struct ModeOptions: OptionSet {
+        let rawValue: Int
+        
+        static let hasRemoveButton  = ModeOptions(rawValue: 1 << 0)
+        static let hasCropButton = ModeOptions(rawValue: 1 << 1)
+        static let hasFiltersButton  = ModeOptions(rawValue: 1 << 2)
+        
+        static let allButtons: ModeOptions = [.hasRemoveButton, .hasCropButton, .hasFiltersButton]
+    }
+    
     // MARK: - Subviews
     
     private let removeButton = UIButton()
     private let cropButton = UIButton()
+    private let filtersButton = UIButton()
+    
+    private var buttons = [UIButton]()
     
     // MARK: UIView
     
     override init(frame: CGRect) {
+        self.mode = .allButtons
         super.init(frame: frame)
         
         backgroundColor = .white
@@ -26,8 +40,19 @@ final class PhotoControlsView: UIView {
             for: .touchUpInside
         )
         
+        filtersButton.addTarget(
+            self,
+            action: #selector(onFiltersButtonTap(_:)),
+            for: .touchUpInside
+        )
+        
         addSubview(removeButton)
-        addSubview(cropButton)    // в первой итерации не показываем
+        addSubview(cropButton)
+        addSubview(filtersButton)
+        
+        buttons.append(removeButton)
+        buttons.append(cropButton)
+        buttons.append(filtersButton)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,14 +62,13 @@ final class PhotoControlsView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        removeButton.size = CGSize.minimumTapAreaSize
-        cropButton.size = CGSize.minimumTapAreaSize
-        
-        if cropButton.isHidden {
-            removeButton.center = bounds.center
-        } else {
-            removeButton.center = CGPoint(x: bounds.left + bounds.size.width * 0.25, y: bounds.centerY)
-            cropButton.center = CGPoint(x: bounds.right - bounds.size.width * 0.25, y: bounds.centerY)
+        let visibleButtons = buttons.filter { $0.isHidden == false }
+        visibleButtons.enumerated().forEach { index, button in
+            button.size = CGSize.minimumTapAreaSize
+            button.center = CGPoint(
+                x: round((CGFloat(index) * bounds.width) / CGFloat(visibleButtons.count)),
+                y: bounds.centerY
+            )
         }
     }
     
@@ -52,7 +76,17 @@ final class PhotoControlsView: UIView {
     
     var onRemoveButtonTap: (() -> ())?
     var onCropButtonTap: (() -> ())?
+    var onFiltersButtonTap: (() -> ())?
     var onCameraButtonTap: (() -> ())?
+    
+    var mode: ModeOptions {
+        didSet {
+            removeButton.isHidden = !mode.contains(.hasRemoveButton)
+            cropButton.isHidden = !mode.contains(.hasCropButton)
+            filtersButton.isHidden = !mode.contains(.hasFiltersButton)
+            setNeedsLayout()
+        }
+    }
     
     func setControlsTransform(_ transform: CGAffineTransform) {
         removeButton.transform = transform
@@ -62,11 +96,7 @@ final class PhotoControlsView: UIView {
     func setTheme(_ theme: MediaPickerRootModuleUITheme) {
         removeButton.setImage(theme.removePhotoIcon, for: .normal)
         cropButton.setImage(theme.cropPhotoIcon, for: .normal)
-    }
-    
-    func setShowsCropButton(_ showsCropButton: Bool) {
-        cropButton.isHidden = !showsCropButton
-        setNeedsLayout()
+        filtersButton.setImage(theme.filtersIcon, for: .normal)
     }
     
     // MARK: - Private
@@ -77,5 +107,9 @@ final class PhotoControlsView: UIView {
     
     @objc private func onCropButtonTap(_: UIButton) {
         onCropButtonTap?()
+    }
+    
+    @objc private func onFiltersButtonTap(_: UIButton) {
+        onFiltersButtonTap?()
     }
 }

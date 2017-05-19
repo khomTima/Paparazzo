@@ -1,6 +1,10 @@
 import UIKit
 
-public struct PaparazzoUITheme: MediaPickerRootModuleUITheme, PhotoLibraryUITheme, ImageCroppingUITheme {
+public struct PaparazzoUITheme:
+MediaPickerRootModuleUITheme,
+PhotoLibraryUITheme,
+ImageCroppingUITheme,
+FiltersUITheme {
 
     public init() {}
 
@@ -12,6 +16,7 @@ public struct PaparazzoUITheme: MediaPickerRootModuleUITheme, PhotoLibraryUIThem
 
     public var removePhotoIcon = PaparazzoUITheme.image(named: "delete")
     public var cropPhotoIcon = PaparazzoUITheme.image(named: "crop")
+    public var filtersIcon = PaparazzoUITheme.image(named: "filters")
     public var returnToCameraIcon = PaparazzoUITheme.image(named: "camera")
     public var closeCameraIcon = PaparazzoUITheme.image(named: "bt-close")
     public var flashOnIcon = PaparazzoUITheme.image(named: "light_on")
@@ -51,6 +56,11 @@ public struct PaparazzoUITheme: MediaPickerRootModuleUITheme, PhotoLibraryUIThem
     public var cancelRotationTitleColor = UIColor.white
     public var cancelRotationTitleFont = UIFont.boldSystemFont(ofSize: 14)
 
+    // MARK: - FiltersUITheme
+    
+    public var discardIcon = PaparazzoUITheme.image(named: "discard")
+    public var confirmIcon = PaparazzoUITheme.image(named: "confirm")
+    
     // MARK: - Private
 
     private class BundleId {}
@@ -80,6 +90,7 @@ public protocol MediaPickerRootModuleUITheme: AccessDeniedViewTheme {
 
     var removePhotoIcon: UIImage? { get }
     var cropPhotoIcon: UIImage? { get }
+    var filtersIcon: UIImage? { get }
     var returnToCameraIcon: UIImage? { get }
     var closeCameraIcon: UIImage? { get }
     var flashOnIcon: UIImage? { get }
@@ -113,4 +124,9 @@ public protocol ImageCroppingUITheme {
     var cancelRotationTitleColor: UIColor { get }
     var cancelRotationTitleFont: UIFont { get }
     var cancelRotationButtonIcon: UIImage? { get }
+}
+
+public protocol FiltersUITheme {
+    var discardIcon: UIImage? { get }
+    var confirmIcon: UIImage? { get }
 }

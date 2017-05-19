@@ -176,6 +176,11 @@ final class MediaPickerViewController: UIViewController, MediaPickerViewInput {
         set { mediaPickerView.onCropButtonTap = newValue }
     }
     
+    var onFiltersButtonTap: (() -> ())? {
+        get { return mediaPickerView.onFiltersButtonTap }
+        set { mediaPickerView.onFiltersButtonTap = newValue }
+    }
+    
     var onCameraThumbnailTap: (() -> ())? {
         get { return mediaPickerView.onCameraThumbnailTap }
         set { mediaPickerView.onCameraThumbnailTap = newValue }
