@@ -14,6 +14,11 @@ protocol MediaPickerRouter: class {
         configuration: (ImageCroppingModule) -> ()
     )
     
+    func showFiltersModule(
+        forImage: ImageSource,
+        configuration: (FiltersModule) -> ()
+    )
+    
     func focusOnCurrentModule()
     func dismissCurrentModule()
 }

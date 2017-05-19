@@ -3,7 +3,9 @@ import Marshroute
 
 final class MediaPickerMarshrouteRouter: BaseRouter, MediaPickerRouter {
     
-    typealias AssemblyFactory = ImageCroppingAssemblyFactory & PhotoLibraryMarshrouteAssemblyFactory
+    typealias AssemblyFactory = ImageCroppingAssemblyFactory
+        & PhotoLibraryMarshrouteAssemblyFactory
+        & FiltersAssemblyFactory
 
     private let assemblyFactory: AssemblyFactory
 
@@ -44,6 +46,22 @@ final class MediaPickerMarshrouteRouter: BaseRouter, MediaPickerRouter {
             return assembly.module(
                 image: image,
                 canvasSize: canvasSize,
+                configuration: configuration
+            )
+            
+        }, animator: NonAnimatedPushAnimator())
+    }
+    
+    func showFiltersModule(
+        forImage image: ImageSource,
+        configuration: (FiltersModule) -> ())
+    {
+        pushViewControllerDerivedFrom({ _ in
+            
+            let assembly = assemblyFactory.filtersAssembly()
+            
+            return assembly.module(
+                image: image,
                 configuration: configuration
             )
             

@@ -3,7 +3,10 @@ import UIKit
 
 public final class MediaPickerMarshrouteAssemblyImpl: MediaPickerMarshrouteAssembly {
     
-    typealias AssemblyFactory = CameraAssemblyFactory & ImageCroppingAssemblyFactory & PhotoLibraryMarshrouteAssemblyFactory
+    typealias AssemblyFactory = CameraAssemblyFactory
+        & ImageCroppingAssemblyFactory
+        & PhotoLibraryMarshrouteAssemblyFactory
+        & FiltersAssemblyFactory
     
     private let assemblyFactory: AssemblyFactory
     private let theme: PaparazzoUITheme
