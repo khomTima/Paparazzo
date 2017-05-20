@@ -8,7 +8,6 @@
 
 import UIKit
 import Accelerate
-
 public extension UIImage {
     public func cropImage(rect: CGRect) -> UIImage {
         

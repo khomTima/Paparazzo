@@ -65,7 +65,8 @@ final class ExamplePresenter {
                 LicensePlateDetectionFilter(),
                 FaceDetectionFilter(),
                 TrustworthyAutoStamp(),
-                WitnessFryazino()
+                WitnessFryazino(),
+                InstantFilter()
             ],
             maxItemsCount: 20,
             cropCanvasSize: cropCanvasSize,
