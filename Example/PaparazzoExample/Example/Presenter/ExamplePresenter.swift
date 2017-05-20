@@ -68,7 +68,8 @@ final class ExamplePresenter {
                 WitnessFryazino(),
                 InstantFilter(),
                 MonoFilter(),
-                ChromeFilter()
+                ChromeFilter(),
+                ProcessFilter()
             ],
             maxItemsCount: 20,
             cropCanvasSize: cropCanvasSize,
