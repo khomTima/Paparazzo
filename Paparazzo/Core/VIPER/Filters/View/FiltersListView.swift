@@ -12,7 +12,8 @@ final class FiltersListView: UIView, UICollectionViewDelegate, UICollectionViewD
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
-        layout.minimumInteritemSpacing = 2.0
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         collectionView.backgroundColor = .clear
