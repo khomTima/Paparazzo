@@ -10,6 +10,6 @@ import UIKit
 
 class SepiaFilter: CoreImageFilterBase {
     convenience init() {
-        self.init(ciFilterName: "CISepiaTone", preview: UIImage(), title: "Sepia")
+        self.init(ciFilterName: "CISepiaTone", preview: UIImage(), title: "Сепия")
     }
 }

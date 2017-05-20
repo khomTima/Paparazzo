@@ -10,6 +10,6 @@ import UIKit
 
 class InstantFilter: CoreImageFilterBase {
     convenience init() {
-        self.init(ciFilterName: "CIPhotoEffectInstant", preview: UIImage(), title: "Instant")
+        self.init(ciFilterName: "CIPhotoEffectInstant", preview: UIImage(), title: "Ваниль")
     }
 }

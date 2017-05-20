@@ -13,7 +13,7 @@ public class FaceDetectionFilter: Filter {
     
     public var preview: UIImage = UIImage()
     
-    public var title: String = "FaceDetection"
+    public var title: String = "Убрать лица"
     
     public func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void)){
         

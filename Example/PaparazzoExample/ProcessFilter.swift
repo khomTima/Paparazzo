@@ -10,6 +10,6 @@ import UIKit
 
 class ProcessFilter: CoreImageFilterBase {
     convenience init() {
-        self.init(ciFilterName: "CIPhotoEffectProcess", preview: UIImage(), title: "Process")
+        self.init(ciFilterName: "CIPhotoEffectProcess", preview: UIImage(), title: "Изумруд")
     }
 }

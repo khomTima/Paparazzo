@@ -47,7 +47,6 @@
 		68D619AA8C30AB479F72525D /* Pods_PaparazzoExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2DAC113521ADEBFF8A22F1 /* Pods_PaparazzoExample.framework */; };
 		EF8240171ECF5CC8005965DC /* LicensePlateDetectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8240161ECF5CC8005965DC /* LicensePlateDetectionFilter.swift */; };
 		EF8240191ECF5D9E005965DC /* UIImage+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8240181ECF5D9E005965DC /* UIImage+Transform.swift */; };
-		EF82401B1ECF6769005965DC /* RemoveBackgroundFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82401A1ECF6769005965DC /* RemoveBackgroundFilter.swift */; };
 		EF8240261ED03904005965DC /* DeepBelief.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8240251ED03904005965DC /* DeepBelief.framework */; };
 		EF8240281ED0395E005965DC /* ObjectDetectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8240271ED0395E005965DC /* ObjectDetectionFilter.swift */; };
 		EF82402F1ED03B19005965DC /* DeepBeliefBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = EF82402E1ED03B19005965DC /* DeepBeliefBridge.m */; };
@@ -121,7 +120,6 @@
 		E747D4112A5EEA41675E0267 /* Pods-PaparazzoExample_Storyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaparazzoExample_Storyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaparazzoExample_Storyboard/Pods-PaparazzoExample_Storyboard.release.xcconfig"; sourceTree = "<group>"; };
 		EF8240161ECF5CC8005965DC /* LicensePlateDetectionFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensePlateDetectionFilter.swift; sourceTree = "<group>"; };
 		EF8240181ECF5D9E005965DC /* UIImage+Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Transform.swift"; sourceTree = "<group>"; };
-		EF82401A1ECF6769005965DC /* RemoveBackgroundFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveBackgroundFilter.swift; sourceTree = "<group>"; };
 		EF8240251ED03904005965DC /* DeepBelief.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeepBelief.framework; path = PaparazzoExample/Frameworks/DeepBelief.framework; sourceTree = "<group>"; };
 		EF8240271ED0395E005965DC /* ObjectDetectionFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDetectionFilter.swift; sourceTree = "<group>"; };
 		EF8240291ED0399C005965DC /* PaparazzoExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PaparazzoExample-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 				EF8240341ED043E0005965DC /* jetpac.ntwk */,
 				18705C5D1ECF290B00380DF4 /* FaceDetectionFilter.swift */,
 				EF8240161ECF5CC8005965DC /* LicensePlateDetectionFilter.swift */,
-				EF82401A1ECF6769005965DC /* RemoveBackgroundFilter.swift */,
 				EF8240271ED0395E005965DC /* ObjectDetectionFilter.swift */,
 				EF82402D1ED03B19005965DC /* DeepBeliefBridge.h */,
 				EF82402E1ED03B19005965DC /* DeepBeliefBridge.m */,
@@ -709,7 +706,6 @@
 				F76CA1651ED059B9001B2485 /* VignetteFilter.swift in Sources */,
 				251E57F61E6565890009A288 /* ExamplePresenter.swift in Sources */,
 				251E57F31E6565890009A288 /* ExampleAssemblyImpl.swift in Sources */,
-				EF82401B1ECF6769005965DC /* RemoveBackgroundFilter.swift in Sources */,
 				251E57F01E6565890009A288 /* AppSpecificUITheme.swift in Sources */,
 				EFA7610E1E829434000EB296 /* ItemProvider.swift in Sources */,
 				EF8240281ED0395E005965DC /* ObjectDetectionFilter.swift in Sources */,

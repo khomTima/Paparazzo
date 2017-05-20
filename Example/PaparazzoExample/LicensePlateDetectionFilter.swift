@@ -13,7 +13,7 @@ public class LicensePlateDetectionFilter: Filter {
     
     public var preview: UIImage = UIImage()
     
-    public var title: String = "LicensePlateDetection"
+    public var title: String = "Убрать номер"
     
     public func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void)){
         

@@ -12,7 +12,7 @@ import Paparazzo
 class VignetteFilter: Filter {
     public var preview: UIImage = UIImage()
     
-    public var title: String = "Vignette"
+    public var title: String = "Виньетка"
 
     public func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void)){
         let context = CIContext(options: nil)

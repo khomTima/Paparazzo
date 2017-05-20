@@ -10,6 +10,6 @@ import UIKit
 
 class MonoFilter: CoreImageFilterBase {
     convenience init() {
-        self.init(ciFilterName: "CIPhotoEffectMono", preview: UIImage(), title: "Mono")
+        self.init(ciFilterName: "CIPhotoEffectMono", preview: UIImage(), title: "Серый")
     }
 }

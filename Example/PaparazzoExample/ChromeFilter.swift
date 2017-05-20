@@ -10,6 +10,6 @@ import UIKit
 
 class ChromeFilter: CoreImageFilterBase {
     convenience init() {
-        self.init(ciFilterName: "CIPhotoEffectChrome", preview: UIImage(), title: "Chrome")
+        self.init(ciFilterName: "CIPhotoEffectChrome", preview: UIImage(), title: "Хром")
     }
 }
