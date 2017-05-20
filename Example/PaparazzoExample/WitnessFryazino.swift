@@ -6,7 +6,7 @@ class WitnessFryazino: Filter {
     
     public var title: String = "Свидетель"
     
-    public func apply(_ sourceImage: UIImage, completion: ((_ resultImage: UIImage) -> Void)){
+    public func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void)){
         let stamp = UIImage.init(named: "witness")
         
         let size = sourceImage.size

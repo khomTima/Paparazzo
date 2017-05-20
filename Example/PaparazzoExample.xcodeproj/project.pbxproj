@@ -47,6 +47,16 @@
 		68D619AA8C30AB479F72525D /* Pods_PaparazzoExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2DAC113521ADEBFF8A22F1 /* Pods_PaparazzoExample.framework */; };
 		EF8240171ECF5CC8005965DC /* LicensePlateDetectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8240161ECF5CC8005965DC /* LicensePlateDetectionFilter.swift */; };
 		EF8240191ECF5D9E005965DC /* UIImage+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8240181ECF5D9E005965DC /* UIImage+Transform.swift */; };
+		EF82401B1ECF6769005965DC /* RemoveBackgroundFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82401A1ECF6769005965DC /* RemoveBackgroundFilter.swift */; };
+		EF8240261ED03904005965DC /* DeepBelief.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8240251ED03904005965DC /* DeepBelief.framework */; };
+		EF8240281ED0395E005965DC /* ObjectDetectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8240271ED0395E005965DC /* ObjectDetectionFilter.swift */; };
+		EF82402F1ED03B19005965DC /* DeepBeliefBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = EF82402E1ED03B19005965DC /* DeepBeliefBridge.m */; };
+		EF8240311ED03D5D005965DC /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8240301ED03D5D005965DC /* Accelerate.framework */; };
+		EF8240331ED03D80005965DC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8240321ED03D80005965DC /* libc++.tbd */; };
+		EF8240351ED043E0005965DC /* jetpac.ntwk in Resources */ = {isa = PBXBuildFile; fileRef = EF8240341ED043E0005965DC /* jetpac.ntwk */; };
+		EF8240391ED04A2F005965DC /* stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = EF8240361ED04A2F005965DC /* stamp.png */; };
+		EF82403A1ED04A2F005965DC /* transparent-stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = EF8240371ED04A2F005965DC /* transparent-stamp.png */; };
+		EF82403B1ED04A2F005965DC /* TrustworthyAutoStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8240381ED04A2F005965DC /* TrustworthyAutoStamp.swift */; };
 		EFA7610E1E829434000EB296 /* ItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA7610D1E829434000EB296 /* ItemProvider.swift */; };
 		EFA7610F1E829569000EB296 /* ItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA7610D1E829434000EB296 /* ItemProvider.swift */; };
 		F2F50FC61E6C9F60006F9171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F50FC51E6C9F60006F9171 /* AppDelegate.swift */; };
@@ -60,8 +70,6 @@
 		F2F50FD81E6CA160006F9171 /* Latoto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E57EA1E6565890009A288 /* Latoto-Regular.ttf */; };
 		F2F50FD91E6CA160006F9171 /* Latoto-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E57EB1E6565890009A288 /* Latoto-Semibold.ttf */; };
 		F2F50FDA1E6CA160006F9171 /* Latoto-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E57EC1E6565890009A288 /* Latoto-SemiboldItalic.ttf */; };
-		F76CA1531ED03694001B2485 /* TrustworthyAutoStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1521ED03694001B2485 /* TrustworthyAutoStamp.swift */; };
-		F76CA1551ED0371E001B2485 /* transparent-stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = F76CA1541ED0371E001B2485 /* transparent-stamp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +113,18 @@
 		E747D4112A5EEA41675E0267 /* Pods-PaparazzoExample_Storyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaparazzoExample_Storyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaparazzoExample_Storyboard/Pods-PaparazzoExample_Storyboard.release.xcconfig"; sourceTree = "<group>"; };
 		EF8240161ECF5CC8005965DC /* LicensePlateDetectionFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensePlateDetectionFilter.swift; sourceTree = "<group>"; };
 		EF8240181ECF5D9E005965DC /* UIImage+Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Transform.swift"; sourceTree = "<group>"; };
+		EF82401A1ECF6769005965DC /* RemoveBackgroundFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveBackgroundFilter.swift; sourceTree = "<group>"; };
+		EF8240251ED03904005965DC /* DeepBelief.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeepBelief.framework; path = PaparazzoExample/Frameworks/DeepBelief.framework; sourceTree = "<group>"; };
+		EF8240271ED0395E005965DC /* ObjectDetectionFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDetectionFilter.swift; sourceTree = "<group>"; };
+		EF8240291ED0399C005965DC /* PaparazzoExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PaparazzoExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		EF82402D1ED03B19005965DC /* DeepBeliefBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeepBeliefBridge.h; sourceTree = "<group>"; };
+		EF82402E1ED03B19005965DC /* DeepBeliefBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeepBeliefBridge.m; sourceTree = "<group>"; };
+		EF8240301ED03D5D005965DC /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		EF8240321ED03D80005965DC /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		EF8240341ED043E0005965DC /* jetpac.ntwk */ = {isa = PBXFileReference; lastKnownFileType = file; path = jetpac.ntwk; sourceTree = "<group>"; };
+		EF8240361ED04A2F005965DC /* stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamp.png; sourceTree = "<group>"; };
+		EF8240371ED04A2F005965DC /* transparent-stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent-stamp.png"; sourceTree = "<group>"; };
+		EF8240381ED04A2F005965DC /* TrustworthyAutoStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustworthyAutoStamp.swift; sourceTree = "<group>"; };
 		EFA7610D1E829434000EB296 /* ItemProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemProvider.swift; sourceTree = "<group>"; };
 		F2F50FC31E6C9F60006F9171 /* PaparazzoExample_Storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaparazzoExample_Storyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F50FC51E6C9F60006F9171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,8 +133,6 @@
 		F2F50FCC1E6C9F60006F9171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F50FCF1E6C9F60006F9171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2F50FD11E6C9F60006F9171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F76CA1521ED03694001B2485 /* TrustworthyAutoStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustworthyAutoStamp.swift; sourceTree = "<group>"; };
-		F76CA1541ED0371E001B2485 /* transparent-stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent-stamp.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +140,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF8240331ED03D80005965DC /* libc++.tbd in Frameworks */,
+				EF8240311ED03D5D005965DC /* Accelerate.framework in Frameworks */,
+				EF8240261ED03904005965DC /* DeepBelief.framework in Frameworks */,
 				68D619AA8C30AB479F72525D /* Pods_PaparazzoExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,12 +169,18 @@
 		18705C5C1ECF28EA00380DF4 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
-				F76CA1541ED0371E001B2485 /* transparent-stamp.png */,
 				02F7643C1ED048A600C21E5C /* witness.png */,
+				02F764381ED0475900C21E5C /* WitnessFryazino.swift */,
+				EF8240361ED04A2F005965DC /* stamp.png */,
+				EF8240371ED04A2F005965DC /* transparent-stamp.png */,
+				EF8240381ED04A2F005965DC /* TrustworthyAutoStamp.swift */,
+				EF8240341ED043E0005965DC /* jetpac.ntwk */,
 				18705C5D1ECF290B00380DF4 /* FaceDetectionFilter.swift */,
 				EF8240161ECF5CC8005965DC /* LicensePlateDetectionFilter.swift */,
-				F76CA1521ED03694001B2485 /* TrustworthyAutoStamp.swift */,
-				02F764381ED0475900C21E5C /* WitnessFryazino.swift */,
+				EF82401A1ECF6769005965DC /* RemoveBackgroundFilter.swift */,
+				EF8240271ED0395E005965DC /* ObjectDetectionFilter.swift */,
+				EF82402D1ED03B19005965DC /* DeepBeliefBridge.h */,
+				EF82402E1ED03B19005965DC /* DeepBeliefBridge.m */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -186,6 +213,7 @@
 			children = (
 				18705C5C1ECF28EA00380DF4 /* Filters */,
 				253169661E65698C006F1E95 /* Assets.xcassets */,
+				EF8240291ED0399C005965DC /* PaparazzoExample-Bridging-Header.h */,
 				251E57C31E65651F0009A288 /* AppDelegate.swift */,
 				251E57D51E6565890009A288 /* AppSpecificUITheme.swift */,
 				251E57EF1E6565890009A288 /* NavigationController.swift */,
@@ -301,6 +329,9 @@
 		5DF9D2378585A5A97F9DD7F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF8240321ED03D80005965DC /* libc++.tbd */,
+				EF8240301ED03D5D005965DC /* Accelerate.framework */,
+				EF8240251ED03904005965DC /* DeepBelief.framework */,
 				AD2DAC113521ADEBFF8A22F1 /* Pods_PaparazzoExample.framework */,
 				B9A4E214165A8FB30A7CE203 /* Pods_PaparazzoExample_NoMarshroute.framework */,
 				3B16F0AF7B8CAAE81DB10090 /* Pods_PaparazzoExample_Storyboard.framework */,
@@ -405,6 +436,7 @@
 					251E57BF1E65651F0009A288 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 4B3PZ545KB;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					25A489B01E656A2B00CC431B = {
@@ -442,12 +474,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF8240351ED043E0005965DC /* jetpac.ntwk in Resources */,
+				EF8240391ED04A2F005965DC /* stamp.png in Resources */,
 				251E57FD1E6565890009A288 /* Latoto-Light.ttf in Resources */,
 				251E57FF1E6565890009A288 /* Latoto-Semibold.ttf in Resources */,
 				251E57FC1E6565890009A288 /* Latoto-Bold.ttf in Resources */,
 				02F7643D1ED048A600C21E5C /* witness.png in Resources */,
-				F76CA1551ED0371E001B2485 /* transparent-stamp.png in Resources */,
 				251E58001E6565890009A288 /* Latoto-SemiboldItalic.ttf in Resources */,
+				EF82403A1ED04A2F005965DC /* transparent-stamp.png in Resources */,
 				253169671E65698C006F1E95 /* Assets.xcassets in Resources */,
 				251E57FE1E6565890009A288 /* Latoto-Regular.ttf in Resources */,
 			);
@@ -634,17 +668,20 @@
 				02F764391ED0475900C21E5C /* WitnessFryazino.swift in Sources */,
 				251E58011E6565890009A288 /* MarshrouteFacade.swift in Sources */,
 				251E58021E6565890009A288 /* NavigationController.swift in Sources */,
+				EF82402F1ED03B19005965DC /* DeepBeliefBridge.m in Sources */,
 				251E57C41E65651F0009A288 /* AppDelegate.swift in Sources */,
 				EF8240191ECF5D9E005965DC /* UIImage+Transform.swift in Sources */,
+				EF82403B1ED04A2F005965DC /* TrustworthyAutoStamp.swift in Sources */,
 				251E57F81E6565890009A288 /* ExampleRouterImpl.swift in Sources */,
 				18705C5E1ECF290B00380DF4 /* FaceDetectionFilter.swift in Sources */,
 				251E57F71E6565890009A288 /* ExampleRouter.swift in Sources */,
 				251E57F51E6565890009A288 /* ExampleInteractorImpl.swift in Sources */,
 				251E57F61E6565890009A288 /* ExamplePresenter.swift in Sources */,
 				251E57F31E6565890009A288 /* ExampleAssemblyImpl.swift in Sources */,
+				EF82401B1ECF6769005965DC /* RemoveBackgroundFilter.swift in Sources */,
 				251E57F01E6565890009A288 /* AppSpecificUITheme.swift in Sources */,
 				EFA7610E1E829434000EB296 /* ItemProvider.swift in Sources */,
-				F76CA1531ED03694001B2485 /* TrustworthyAutoStamp.swift in Sources */,
+				EF8240281ED0395E005965DC /* ObjectDetectionFilter.swift in Sources */,
 				251E57F91E6565890009A288 /* ExampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -794,13 +831,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4B3PZ545KB;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PaparazzoExample/Frameworks",
+				);
 				INFOPLIST_FILE = PaparazzoExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.avito.PaparazzoExample.enterprise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PaparazzoExample/PaparazzoExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -811,13 +856,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4B3PZ545KB;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PaparazzoExample/Frameworks",
+				);
 				INFOPLIST_FILE = PaparazzoExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.avito.PaparazzoExample.enterprise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PaparazzoExample/PaparazzoExample-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

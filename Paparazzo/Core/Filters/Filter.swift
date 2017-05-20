@@ -5,5 +5,5 @@ public protocol Filter {
     
     var title: String { get }
     
-    func apply(_ sourceImage: UIImage, completion: ((_ resultImage: UIImage) -> Void))
+    func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void))
 }

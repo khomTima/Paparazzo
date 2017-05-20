@@ -61,6 +61,7 @@ final class ExamplePresenter {
             items: items,
             selectedItem: items.last,
             filters: [
+                ObjectDetectionFilter(),
                 LicensePlateDetectionFilter(),
                 FaceDetectionFilter(),
                 TrustworthyAutoStamp(),
