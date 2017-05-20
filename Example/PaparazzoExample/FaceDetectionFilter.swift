@@ -35,7 +35,7 @@ public class FaceDetectionFilter: Filter {
         
         sourceImage.draw(at: CGPoint.zero)
         
-        features?.forEach { [weak self]  feature in
+        features?.forEach { feature in
             
             var faceRect = feature.bounds.applying(transform)
             
@@ -48,8 +48,14 @@ public class FaceDetectionFilter: Filter {
             faceRect.origin.x += offsetX
             faceRect.origin.y += offsetY
             
+            faceRect.size.width += 40
+            faceRect.size.height += 140
+            faceRect.origin.y -= 80
+            faceRect.origin.x -= 20
+            
             let image = sourceImage.cropImage(rect: faceRect)
-            image.blurImage(intensity: 6.0).draw(in: faceRect)
+            image.applyBlurWithRadius(25.0, tintColor: .clear, saturationDeltaFactor: 1.0)?.draw(in: faceRect)
+//            image.blurImage(intensity: 4.0).draw(in: faceRect)
         }
         
         let resultImage = UIGraphicsGetImageFromCurrentImageContext()
