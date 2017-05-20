@@ -60,7 +60,7 @@
 		F2F50FD91E6CA160006F9171 /* Latoto-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E57EB1E6565890009A288 /* Latoto-Semibold.ttf */; };
 		F2F50FDA1E6CA160006F9171 /* Latoto-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E57EC1E6565890009A288 /* Latoto-SemiboldItalic.ttf */; };
 		F76CA1531ED03694001B2485 /* TrustworthyAutoStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1521ED03694001B2485 /* TrustworthyAutoStamp.swift */; };
-		F76CA1551ED0371E001B2485 /* transparent-stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = F76CA1541ED0371E001B2485 /* transparent-stamp.png */; };
+		F76CA1571ED0439C001B2485 /* stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = F76CA1561ED0439C001B2485 /* stamp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,7 +112,7 @@
 		F2F50FCF1E6C9F60006F9171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2F50FD11E6C9F60006F9171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F76CA1521ED03694001B2485 /* TrustworthyAutoStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustworthyAutoStamp.swift; sourceTree = "<group>"; };
-		F76CA1541ED0371E001B2485 /* transparent-stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent-stamp.png"; sourceTree = "<group>"; };
+		F76CA1561ED0439C001B2485 /* stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamp.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +146,7 @@
 		18705C5C1ECF28EA00380DF4 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
-				F76CA1541ED0371E001B2485 /* transparent-stamp.png */,
+				F76CA1561ED0439C001B2485 /* stamp.png */,
 				18705C5D1ECF290B00380DF4 /* FaceDetectionFilter.swift */,
 				EF8240161ECF5CC8005965DC /* LicensePlateDetectionFilter.swift */,
 				F76CA1521ED03694001B2485 /* TrustworthyAutoStamp.swift */,
@@ -442,10 +442,10 @@
 				251E57FD1E6565890009A288 /* Latoto-Light.ttf in Resources */,
 				251E57FF1E6565890009A288 /* Latoto-Semibold.ttf in Resources */,
 				251E57FC1E6565890009A288 /* Latoto-Bold.ttf in Resources */,
-				F76CA1551ED0371E001B2485 /* transparent-stamp.png in Resources */,
 				251E58001E6565890009A288 /* Latoto-SemiboldItalic.ttf in Resources */,
 				253169671E65698C006F1E95 /* Assets.xcassets in Resources */,
 				251E57FE1E6565890009A288 /* Latoto-Regular.ttf in Resources */,
+				F76CA1571ED0439C001B2485 /* stamp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
