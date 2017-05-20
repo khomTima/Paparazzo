@@ -22,7 +22,7 @@ class CoreImageFilterBase: Filter {
         self.title = title
     }
     
-    public func apply(_ sourceImage: UIImage, completion: ((_ resultImage: UIImage) -> Void)){
+    public func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void)){
         let context = CIContext(options: nil)
         
         if let currentFilter = CIFilter(name: self.ciFilterName) {
