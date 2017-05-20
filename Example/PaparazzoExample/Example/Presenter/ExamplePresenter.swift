@@ -60,7 +60,7 @@ final class ExamplePresenter {
         self.router.showMediaPicker(
             items: items,
             selectedItem: items.last,
-            filters: [LicensePlateDetectionFilter(), FaceDetectionFilter(), TrustworthyAutoStamp(), FilterDummy()],
+            filters: [ObjectDetectionFilter(),TrustworthyAutoStamp(), LicensePlateDetectionFilter(), FaceDetectionFilter(), FilterDummy(), FilterDummy(), FilterDummy(), FilterDummy()],
             maxItemsCount: 20,
             cropCanvasSize: cropCanvasSize,
             configuration: { [weak self] module in
