@@ -50,6 +50,7 @@ final class FiltersView: UIView {
             previewView.addGestureRecognizer(longTap)
         }
         
+        titleLabel.textColor = .white
         addSubview(previewView)
         addSubview(controlsView)
         addSubview(titleLabel)
