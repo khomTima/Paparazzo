@@ -70,7 +70,8 @@ final class ExamplePresenter {
                 MonoFilter(),
                 ChromeFilter(),
                 ProcessFilter(),
-                SepiaFilter()
+                SepiaFilter(),
+                VignetteFilter()
             ],
             maxItemsCount: 20,
             cropCanvasSize: cropCanvasSize,

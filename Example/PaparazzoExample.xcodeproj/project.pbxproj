@@ -76,6 +76,7 @@
 		F76CA15F1ED057B0001B2485 /* ChromeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA15E1ED057B0001B2485 /* ChromeFilter.swift */; };
 		F76CA1611ED0585E001B2485 /* ProcessFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1601ED0585E001B2485 /* ProcessFilter.swift */; };
 		F76CA1631ED05950001B2485 /* SepiaFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1621ED05950001B2485 /* SepiaFilter.swift */; };
+		F76CA1651ED059B9001B2485 /* VignetteFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1641ED059B9001B2485 /* VignetteFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,7 @@
 		F76CA15E1ED057B0001B2485 /* ChromeFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromeFilter.swift; sourceTree = "<group>"; };
 		F76CA1601ED0585E001B2485 /* ProcessFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessFilter.swift; sourceTree = "<group>"; };
 		F76CA1621ED05950001B2485 /* SepiaFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SepiaFilter.swift; sourceTree = "<group>"; };
+		F76CA1641ED059B9001B2485 /* VignetteFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VignetteFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				F76CA15E1ED057B0001B2485 /* ChromeFilter.swift */,
 				F76CA1601ED0585E001B2485 /* ProcessFilter.swift */,
 				F76CA1621ED05950001B2485 /* SepiaFilter.swift */,
+				F76CA1641ED059B9001B2485 /* VignetteFilter.swift */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -699,6 +702,7 @@
 				18705C5E1ECF290B00380DF4 /* FaceDetectionFilter.swift in Sources */,
 				251E57F71E6565890009A288 /* ExampleRouter.swift in Sources */,
 				251E57F51E6565890009A288 /* ExampleInteractorImpl.swift in Sources */,
+				F76CA1651ED059B9001B2485 /* VignetteFilter.swift in Sources */,
 				251E57F61E6565890009A288 /* ExamplePresenter.swift in Sources */,
 				251E57F31E6565890009A288 /* ExampleAssemblyImpl.swift in Sources */,
 				EF82401B1ECF6769005965DC /* RemoveBackgroundFilter.swift in Sources */,
