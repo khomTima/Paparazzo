@@ -61,18 +61,18 @@ final class ExamplePresenter {
             items: items,
             selectedItem: items.last,
             filters: [
-                ObjectDetectionFilter(),
+                AutoEnhancementFilter(),
                 LicensePlateDetectionFilter(),
                 FaceDetectionFilter(),
-                TrustworthyAutoStamp(),
-                WitnessFryazino(),
                 InstantFilter(),
                 MonoFilter(),
                 ChromeFilter(),
                 ProcessFilter(),
                 SepiaFilter(),
-                VignetteFilter(),
-                AutoEnhancementFilter()
+                TrustworthyAutoStamp(),
+                WitnessFryazino(),
+                ObjectDetectionFilter(),
+                VignetteFilter()
             ],
             maxItemsCount: 20,
             cropCanvasSize: cropCanvasSize,

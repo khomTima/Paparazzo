@@ -14,7 +14,7 @@ public class ObjectDetectionFilter: Filter {
     public var preview: UIImage = UIImage()
     let deepBeliefBridge = DeepBeliefBridge()
     
-    public var title: String = "ObjectDetectionFilter"
+    public var title: String = "Детектор"
     
     public func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void)){
         

@@ -49,7 +49,7 @@ final class FiltersListView: UIView, UICollectionViewDelegate, UICollectionViewD
         super.layoutSubviews()
         let layout = collectionView.collectionViewLayout
         if layout is UICollectionViewFlowLayout {
-            (layout as! UICollectionViewFlowLayout).itemSize = CGSize(width: 90.0, height: bounds.height)
+            (layout as! UICollectionViewFlowLayout).itemSize = CGSize(width: 110.0, height: bounds.height)
             collectionView.setCollectionViewLayout(layout, animated: false)
         }
         collectionView.frame = bounds
@@ -60,6 +60,7 @@ final class FiltersListView: UIView, UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let filter = filters[indexPath.row]
         selectedFilter = filter
+        collectionView.reloadData()
         onFilterTap?(filter)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
