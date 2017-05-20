@@ -14,7 +14,7 @@ class TrustworthyAutoStamp: Filter {
     
     public var title: String = "Trustworthy Stamp"
     
-    public func apply(_ sourceImage: UIImage, completion: ((_ resultImage: UIImage) -> Void)){
+    public func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void)){
         let stamp = UIImage.init(named: "stamp")
         
         let size = sourceImage.size

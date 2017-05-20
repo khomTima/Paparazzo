@@ -15,7 +15,7 @@ public class FaceDetectionFilter: Filter {
     
     public var title: String = "FaceDetection"
     
-    public func apply(_ sourceImage: UIImage, completion: ((_ resultImage: UIImage) -> Void)){
+    public func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void)){
         
         let context = CIContext()
         let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
