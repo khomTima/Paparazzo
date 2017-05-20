@@ -57,14 +57,23 @@ class WitnessFryazino: Filter {
             print(faceRate)
             let stampSize = CGSize(width: ceil(stamp.size.width * faceRate), height: ceil(stamp.size.height * faceRate))
             
-            let left : Bool =  faceRect.size.height + faceRect.origin.x < (size.width / 2)
+            let left : Bool =  faceRect.size.width + faceRect.origin.x < (size.width / 2)
+            let bigFace = (size.width / faceRect.size.width) < 4
             var offsetX : CGFloat = 0
             if left {
                 offsetX = ceil((faceRect.origin.x + faceRect.size.width) - stampSize.width/2.5)
-                offsetX += ceil(faceRect.size.width * 2)
+                if !bigFace {
+                    offsetX += ceil(faceRect.size.width * 2)
+                } else {
+                    offsetX += ceil(faceRect.size.width / 2)
+                }
             } else {
                 offsetX = ceil(faceRect.origin.x - stampSize.width/1.5)
-                offsetX -= ceil(faceRect.size.width * 2)
+                if !bigFace {
+                    offsetX -= ceil(faceRect.size.width * 2)
+                } else {
+                    offsetX -= ceil(faceRect.size.width / 2)
+                }
             }
             let offsetY = ceil(faceRect.origin.y)
             
