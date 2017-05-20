@@ -18,7 +18,6 @@ class TrustworthyAutoStamp: Filter {
         let stamp = UIImage.init(named: "stamp")
         
         let size = sourceImage.size
-        let stampSize = stamp!.size
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         
         let backgroundRect = CGRect.init(x: 0,
