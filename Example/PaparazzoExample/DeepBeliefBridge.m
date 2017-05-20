@@ -39,13 +39,11 @@
     NSMutableDictionary* newValues = [NSMutableDictionary dictionary];
     for (int index = 0; index < predictionsLength; index += 1) {
         const float predictionValue = predictions[index];
-        if (predictionValue > 0.05f) {
-            char* label = predictionsLabels[index % predictionsLabelsLength];
-            NSString* labelObject = [NSString stringWithCString: label];
-            NSNumber* valueObject = [NSNumber numberWithFloat: predictionValue];
-            [newValues setObject: valueObject forKey: labelObject];
-            NSLog(@"%@ %@",labelObject, labelObject);
-        }
+        char* label = predictionsLabels[index % predictionsLabelsLength];
+        NSString* labelObject = [NSString stringWithCString: label];
+        NSNumber* valueObject = [NSNumber numberWithFloat: predictionValue];
+        [newValues setObject: valueObject forKey: labelObject];
+        NSLog(@"%@ %@",labelObject, valueObject);
     }
     
     jpcnn_destroy_network(network);
