@@ -69,7 +69,8 @@ final class ExamplePresenter {
                 InstantFilter(),
                 MonoFilter(),
                 ChromeFilter(),
-                ProcessFilter()
+                ProcessFilter(),
+                SepiaFilter()
             ],
             maxItemsCount: 20,
             cropCanvasSize: cropCanvasSize,

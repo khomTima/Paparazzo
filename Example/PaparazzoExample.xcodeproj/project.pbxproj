@@ -75,6 +75,7 @@
 		F76CA15D1ED05306001B2485 /* MonoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA15C1ED05306001B2485 /* MonoFilter.swift */; };
 		F76CA15F1ED057B0001B2485 /* ChromeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA15E1ED057B0001B2485 /* ChromeFilter.swift */; };
 		F76CA1611ED0585E001B2485 /* ProcessFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1601ED0585E001B2485 /* ProcessFilter.swift */; };
+		F76CA1631ED05950001B2485 /* SepiaFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1621ED05950001B2485 /* SepiaFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +145,7 @@
 		F76CA15C1ED05306001B2485 /* MonoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonoFilter.swift; sourceTree = "<group>"; };
 		F76CA15E1ED057B0001B2485 /* ChromeFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromeFilter.swift; sourceTree = "<group>"; };
 		F76CA1601ED0585E001B2485 /* ProcessFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessFilter.swift; sourceTree = "<group>"; };
+		F76CA1621ED05950001B2485 /* SepiaFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SepiaFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				F76CA15C1ED05306001B2485 /* MonoFilter.swift */,
 				F76CA15E1ED057B0001B2485 /* ChromeFilter.swift */,
 				F76CA1601ED0585E001B2485 /* ProcessFilter.swift */,
+				F76CA1621ED05950001B2485 /* SepiaFilter.swift */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				251E57F01E6565890009A288 /* AppSpecificUITheme.swift in Sources */,
 				EFA7610E1E829434000EB296 /* ItemProvider.swift in Sources */,
 				EF8240281ED0395E005965DC /* ObjectDetectionFilter.swift in Sources */,
+				F76CA1631ED05950001B2485 /* SepiaFilter.swift in Sources */,
 				251E57F91E6565890009A288 /* ExampleView.swift in Sources */,
 				F76CA15F1ED057B0001B2485 /* ChromeFilter.swift in Sources */,
 				F76CA1611ED0585E001B2485 /* ProcessFilter.swift in Sources */,
