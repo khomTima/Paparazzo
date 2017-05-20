@@ -66,7 +66,8 @@ final class ExamplePresenter {
                 FaceDetectionFilter(),
                 TrustworthyAutoStamp(),
                 WitnessFryazino(),
-                InstantFilter()
+                InstantFilter(),
+                MonoFilter()
             ],
             maxItemsCount: 20,
             cropCanvasSize: cropCanvasSize,

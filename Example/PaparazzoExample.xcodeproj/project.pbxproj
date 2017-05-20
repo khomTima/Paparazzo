@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		02F764391ED0475900C21E5C /* WitnessFryazino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F764381ED0475900C21E5C /* WitnessFryazino.swift */; };
 		02F7643D1ED048A600C21E5C /* witness.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F7643C1ED048A600C21E5C /* witness.png */; };
-		025478DF1ECF294700D30383 /* FilterDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025478DE1ECF294700D30383 /* FilterDummy.swift */; };
 		088535F351074F52B19B1688 /* Pods_PaparazzoExample_NoMarshroute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A4E214165A8FB30A7CE203 /* Pods_PaparazzoExample_NoMarshroute.framework */; };
 		08BB7920D2F1F31E8D8C1760 /* Pods_PaparazzoExample_Storyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B16F0AF7B8CAAE81DB10090 /* Pods_PaparazzoExample_Storyboard.framework */; };
 		18705C5E1ECF290B00380DF4 /* FaceDetectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18705C5D1ECF290B00380DF4 /* FaceDetectionFilter.swift */; };
@@ -71,10 +70,9 @@
 		F2F50FD81E6CA160006F9171 /* Latoto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E57EA1E6565890009A288 /* Latoto-Regular.ttf */; };
 		F2F50FD91E6CA160006F9171 /* Latoto-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E57EB1E6565890009A288 /* Latoto-Semibold.ttf */; };
 		F2F50FDA1E6CA160006F9171 /* Latoto-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E57EC1E6565890009A288 /* Latoto-SemiboldItalic.ttf */; };
-		F76CA1531ED03694001B2485 /* TrustworthyAutoStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1521ED03694001B2485 /* TrustworthyAutoStamp.swift */; };
-		F76CA1571ED0439C001B2485 /* stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = F76CA1561ED0439C001B2485 /* stamp.png */; };
 		F76CA1591ED047A1001B2485 /* CoreImageFilterBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1581ED047A1001B2485 /* CoreImageFilterBase.swift */; };
 		F76CA15B1ED04841001B2485 /* InstantFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA15A1ED04841001B2485 /* InstantFilter.swift */; };
+		F76CA15D1ED05306001B2485 /* MonoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA15C1ED05306001B2485 /* MonoFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,9 +137,9 @@
 		F2F50FCF1E6C9F60006F9171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2F50FD11E6C9F60006F9171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F76CA1521ED03694001B2485 /* TrustworthyAutoStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustworthyAutoStamp.swift; sourceTree = "<group>"; };
-		F76CA1561ED0439C001B2485 /* stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamp.png; sourceTree = "<group>"; };
 		F76CA1581ED047A1001B2485 /* CoreImageFilterBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreImageFilterBase.swift; sourceTree = "<group>"; };
 		F76CA15A1ED04841001B2485 /* InstantFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantFilter.swift; sourceTree = "<group>"; };
+		F76CA15C1ED05306001B2485 /* MonoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonoFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +191,7 @@
 				F76CA1521ED03694001B2485 /* TrustworthyAutoStamp.swift */,
 				F76CA1581ED047A1001B2485 /* CoreImageFilterBase.swift */,
 				F76CA15A1ED04841001B2485 /* InstantFilter.swift */,
+				F76CA15C1ED05306001B2485 /* MonoFilter.swift */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -682,6 +681,7 @@
 				02F764391ED0475900C21E5C /* WitnessFryazino.swift in Sources */,
 				251E58011E6565890009A288 /* MarshrouteFacade.swift in Sources */,
 				251E58021E6565890009A288 /* NavigationController.swift in Sources */,
+				F76CA15D1ED05306001B2485 /* MonoFilter.swift in Sources */,
 				EF82402F1ED03B19005965DC /* DeepBeliefBridge.m in Sources */,
 				251E57C41E65651F0009A288 /* AppDelegate.swift in Sources */,
 				EF8240191ECF5D9E005965DC /* UIImage+Transform.swift in Sources */,
