@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		025478DF1ECF294700D30383 /* FilterDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025478DE1ECF294700D30383 /* FilterDummy.swift */; };
+		02F764391ED0475900C21E5C /* WitnessFryazino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F764381ED0475900C21E5C /* WitnessFryazino.swift */; };
+		02F7643D1ED048A600C21E5C /* witness.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F7643C1ED048A600C21E5C /* witness.png */; };
 		088535F351074F52B19B1688 /* Pods_PaparazzoExample_NoMarshroute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A4E214165A8FB30A7CE203 /* Pods_PaparazzoExample_NoMarshroute.framework */; };
 		08BB7920D2F1F31E8D8C1760 /* Pods_PaparazzoExample_Storyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B16F0AF7B8CAAE81DB10090 /* Pods_PaparazzoExample_Storyboard.framework */; };
 		18705C5E1ECF290B00380DF4 /* FaceDetectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18705C5D1ECF290B00380DF4 /* FaceDetectionFilter.swift */; };
@@ -64,7 +65,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		025478DE1ECF294700D30383 /* FilterDummy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterDummy.swift; sourceTree = "<group>"; };
+		02F764381ED0475900C21E5C /* WitnessFryazino.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WitnessFryazino.swift; sourceTree = "<group>"; };
+		02F7643C1ED048A600C21E5C /* witness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = witness.png; sourceTree = "<group>"; };
 		0CD08CDB3C698AABC02FE1C4 /* Pods-PaparazzoExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaparazzoExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaparazzoExample/Pods-PaparazzoExample.release.xcconfig"; sourceTree = "<group>"; };
 		18705C5D1ECF290B00380DF4 /* FaceDetectionFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceDetectionFilter.swift; sourceTree = "<group>"; };
 		251E57C01E65651F0009A288 /* PaparazzoExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaparazzoExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,9 +149,11 @@
 			isa = PBXGroup;
 			children = (
 				F76CA1541ED0371E001B2485 /* transparent-stamp.png */,
+				02F7643C1ED048A600C21E5C /* witness.png */,
 				18705C5D1ECF290B00380DF4 /* FaceDetectionFilter.swift */,
 				EF8240161ECF5CC8005965DC /* LicensePlateDetectionFilter.swift */,
 				F76CA1521ED03694001B2485 /* TrustworthyAutoStamp.swift */,
+				02F764381ED0475900C21E5C /* WitnessFryazino.swift */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -228,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				251E57DF1E6565890009A288 /* ExamplePresenter.swift */,
-				025478DE1ECF294700D30383 /* FilterDummy.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				251E57FD1E6565890009A288 /* Latoto-Light.ttf in Resources */,
 				251E57FF1E6565890009A288 /* Latoto-Semibold.ttf in Resources */,
 				251E57FC1E6565890009A288 /* Latoto-Bold.ttf in Resources */,
+				02F7643D1ED048A600C21E5C /* witness.png in Resources */,
 				F76CA1551ED0371E001B2485 /* transparent-stamp.png in Resources */,
 				251E58001E6565890009A288 /* Latoto-SemiboldItalic.ttf in Resources */,
 				253169671E65698C006F1E95 /* Assets.xcassets in Resources */,
@@ -627,6 +631,7 @@
 				EF8240171ECF5CC8005965DC /* LicensePlateDetectionFilter.swift in Sources */,
 				251E57F21E6565890009A288 /* ExampleAssembly.swift in Sources */,
 				251E57F41E6565890009A288 /* ExampleInteractor.swift in Sources */,
+				02F764391ED0475900C21E5C /* WitnessFryazino.swift in Sources */,
 				251E58011E6565890009A288 /* MarshrouteFacade.swift in Sources */,
 				251E58021E6565890009A288 /* NavigationController.swift in Sources */,
 				251E57C41E65651F0009A288 /* AppDelegate.swift in Sources */,
@@ -639,7 +644,6 @@
 				251E57F31E6565890009A288 /* ExampleAssemblyImpl.swift in Sources */,
 				251E57F01E6565890009A288 /* AppSpecificUITheme.swift in Sources */,
 				EFA7610E1E829434000EB296 /* ItemProvider.swift in Sources */,
-				025478DF1ECF294700D30383 /* FilterDummy.swift in Sources */,
 				F76CA1531ED03694001B2485 /* TrustworthyAutoStamp.swift in Sources */,
 				251E57F91E6565890009A288 /* ExampleView.swift in Sources */,
 			);
