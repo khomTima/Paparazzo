@@ -44,7 +44,7 @@ final class FiltersViewController: UIViewController, FiltersViewInput {
         set { filtersView.onDiscardButtonTap = newValue }
     }
     
-    var onConfirmButtonTap: ((_ previewImage: CGImage?) -> ())? {
+    var onConfirmButtonTap: ((_ previewImage: ImageSource?) -> ())? {
         get { return filtersView.onConfirmButtonTap }
         set { filtersView.onConfirmButtonTap = newValue }
     }

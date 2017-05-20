@@ -8,6 +8,7 @@ final class FiltersView: UIView {
     private let previewView = UIImageView()
     private let controlsView = FiltersControlsView()
     private let titleLabel = UILabel()
+    private var image: ImageSource? = nil
     
     // MARK: - Constants
     
@@ -31,7 +32,7 @@ final class FiltersView: UIView {
         clipsToBounds = true
         
         controlsView.onConfirmButtonTap = { [weak self] in
-            self?.onConfirmButtonTap?(self?.previewView.image?.cgImage)
+            self?.onConfirmButtonTap?(self?.image)
         }
         
         previewView.contentMode = .scaleAspectFit
@@ -76,9 +77,10 @@ final class FiltersView: UIView {
         set { controlsView.onDiscardButtonTap = newValue }
     }
     
-    var onConfirmButtonTap: ((_ previewImage: CGImage?) -> ())?
+    var onConfirmButtonTap: ((_ previewImage: ImageSource?) -> ())?
     
     func setImage(_ image: ImageSource, filters: [Filter]) {
+        self.image = image
         
         let options = ImageRequestOptions(size: .fullResolution, deliveryMode: .best)
         

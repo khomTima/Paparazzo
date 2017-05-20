@@ -384,8 +384,22 @@ final class MediaPickerPresenter: MediaPickerModule {
             }
             
             module.onConfirm = { [weak self] image in
+                self?.router.focusOnCurrentModule()
                 
+                let filteredItem = MediaPickerItem(
+                    identifier: item.identifier,
+                    image: image,
+                    source: item.source
+                )
+                
+                self?.interactor.updateItem(filteredItem) {
+                    self?.view?.updateItem(filteredItem)
+                    self?.adjustPhotoTitleForItem(filteredItem)
+                    self?.onItemUpdate?(filteredItem)
+                    self?.router.focusOnCurrentModule()
+                }
             }
+            
         }
     }
 }

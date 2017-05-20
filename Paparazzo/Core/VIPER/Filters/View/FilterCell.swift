@@ -1,8 +1,15 @@
 import Foundation
 
 final class FilterCell: UICollectionViewCell {
+    
     private let previewImageView = UIImageView()
     private let titleLabel = UILabel()
+    
+    var selectedBorderColor: UIColor? = .blue {
+        didSet {
+            adjustBorderColor()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -12,6 +19,13 @@ final class FilterCell: UICollectionViewCell {
         previewImageView.layer.shouldRasterize = true
         previewImageView.layer.rasterizationScale = UIScreen.main.nativeScale
         previewImageView.layer.cornerRadius = 5.0
+        
+        titleLabel.font = UIFont.systemFont(ofSize: 13)
+        titleLabel.textAlignment = .center
+        
+        layer.shouldRasterize = true
+        layer.rasterizationScale = UIScreen.main.nativeScale
+        layer.cornerRadius = 5.0
 
         contentView.addSubview(previewImageView)
         contentView.addSubview(titleLabel)
@@ -26,9 +40,9 @@ final class FilterCell: UICollectionViewCell {
         
         let titleSize = titleLabel.sizeThatFits(bounds.size)
         titleLabel.layout(
-            left: bounds.left,
-            right: bounds.right,
-            top: bounds.top,
+            left: bounds.left + 5,
+            right: bounds.right - 5,
+            top: bounds.top + 2,
             height: titleSize.height
         )
         
@@ -43,7 +57,19 @@ final class FilterCell: UICollectionViewCell {
     public func setCellData(_ cellData: FilterCellData) {
         previewImageView.image = cellData.previewImage
         titleLabel.text = cellData.title
-    
+        
         setNeedsLayout()
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            layer.borderWidth = isSelected ? 4 : 0
+        }
+    }
+    
+    // MARK: - Private
+    
+    private func adjustBorderColor() {
+        layer.borderColor = selectedBorderColor?.cgColor
     }
 }

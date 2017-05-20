@@ -60,6 +60,8 @@ FiltersUITheme {
     
     public var discardIcon = PaparazzoUITheme.image(named: "discard")
     public var confirmIcon = PaparazzoUITheme.image(named: "confirm")
+    public var filterItemSelectionColor = UIColor(red: 0, green: 170.0/255, blue: 1, alpha: 1)
+    public var filterTitleFont = UIFont.systemFont(ofSize: 13)
     
     // MARK: - Private
 
@@ -127,6 +129,9 @@ public protocol ImageCroppingUITheme {
 }
 
 public protocol FiltersUITheme {
+    
     var discardIcon: UIImage? { get }
     var confirmIcon: UIImage? { get }
+    var filterItemSelectionColor: UIColor { get }
+    var filterTitleFont: UIFont { get }
 }

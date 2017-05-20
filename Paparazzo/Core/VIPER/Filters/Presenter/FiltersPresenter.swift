@@ -71,7 +71,7 @@ final class FiltersPresenter: FiltersModule {
         
         view?.onConfirmButtonTap = { [weak self] previewImage in
             if let previewImage = previewImage {
-                
+                self?.onConfirm?(previewImage)
             } else {
                 self?.onDiscard?()
             }

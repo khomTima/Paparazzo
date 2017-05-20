@@ -66,7 +66,7 @@ final class PhotoControlsView: UIView {
         visibleButtons.enumerated().forEach { index, button in
             button.size = CGSize.minimumTapAreaSize
             button.center = CGPoint(
-                x: round((CGFloat(index) * bounds.width) / CGFloat(visibleButtons.count)),
+                x: round(((CGFloat(index) + 0.5) * bounds.width) / CGFloat(visibleButtons.count)),
                 y: bounds.centerY
             )
         }

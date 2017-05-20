@@ -87,6 +87,7 @@ final class FiltersControlsView: UIView {
     func setTheme(_ theme: FiltersUITheme) {
         discardButton.setImage(theme.discardIcon, for: .normal)
         confirmButton.setImage(theme.confirmIcon, for: .normal)
+        filtersListView.theme = theme
     }
     
     // MARK: - Private

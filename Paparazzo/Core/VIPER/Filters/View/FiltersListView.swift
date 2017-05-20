@@ -2,11 +2,11 @@ import Foundation
 
 final class FiltersListView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     private let collectionView: UICollectionView
-    
+    var theme: FiltersUITheme?
+    var selectedFilter: Filter? = nil
     var onFilterTap: ((_ filter: Filter) -> Void)?
     
     init() {
-        
         self.filters = []
         
         let layout = UICollectionViewFlowLayout()
@@ -58,10 +58,11 @@ final class FiltersListView: UIView, UICollectionViewDelegate, UICollectionViewD
     // MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        onFilterTap?(filters[indexPath.row])
+        let filter = filters[indexPath.row]
+        selectedFilter = filter
+        onFilterTap?(filter)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
-    
     
     // MARK: - UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -71,7 +72,13 @@ final class FiltersListView: UIView, UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCell", for: indexPath)
         if cell is FilterCell {
-            (cell as! FilterCell).setCellData(filtersCellData[indexPath.row])
+            let cell = cell as! FilterCell
+            let filter = filters[indexPath.row]
+            if let selectedFilter = selectedFilter {
+                cell.isSelected = filter.title == selectedFilter.title
+            }
+            cell.setCellData(filtersCellData[indexPath.row])
+            cell.selectedBorderColor = theme?.filterItemSelectionColor
         }
         return cell
     }

@@ -10,5 +10,5 @@ protocol FiltersViewInput: class {
     var onFilterTap: ((_ filter: Filter) -> Void)? { get set }
     
     var onDiscardButtonTap: (() -> ())? { get set }
-    var onConfirmButtonTap: ((_ previewImage: CGImage?) -> ())? { get set }
+    var onConfirmButtonTap: ((_ previewImage: ImageSource?) -> ())? { get set }
 }
