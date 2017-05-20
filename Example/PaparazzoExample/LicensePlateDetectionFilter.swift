@@ -15,7 +15,7 @@ public class LicensePlateDetectionFilter: Filter {
     
     public var title: String = "LicensePlateDetection"
     
-    public func apply(_ sourceImage: UIImage, completion: ((_ resultImage: UIImage) -> Void)){
+    public func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void)){
         
         if #available(iOS 9.0, *) {
             let context = CIContext()

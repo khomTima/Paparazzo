@@ -9,7 +9,7 @@ final class FilterDummy: Filter {
     
     let title = "lol kek chebureck"
     
-    func apply(_ sourceImage: UIImage, completion: ((_ resultImage: UIImage) -> Void)) {
+    func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void)) {
         let stamp = UIImage.init(named: "transparent-stamp")
         let image = sourceImage
         let size = image.size
