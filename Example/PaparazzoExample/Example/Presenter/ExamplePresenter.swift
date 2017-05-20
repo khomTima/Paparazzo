@@ -67,7 +67,8 @@ final class ExamplePresenter {
                 TrustworthyAutoStamp(),
                 WitnessFryazino(),
                 InstantFilter(),
-                MonoFilter()
+                MonoFilter(),
+                ChromeFilter()
             ],
             maxItemsCount: 20,
             cropCanvasSize: cropCanvasSize,

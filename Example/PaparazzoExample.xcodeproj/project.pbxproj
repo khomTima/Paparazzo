@@ -73,6 +73,7 @@
 		F76CA1591ED047A1001B2485 /* CoreImageFilterBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1581ED047A1001B2485 /* CoreImageFilterBase.swift */; };
 		F76CA15B1ED04841001B2485 /* InstantFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA15A1ED04841001B2485 /* InstantFilter.swift */; };
 		F76CA15D1ED05306001B2485 /* MonoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA15C1ED05306001B2485 /* MonoFilter.swift */; };
+		F76CA15F1ED057B0001B2485 /* ChromeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA15E1ED057B0001B2485 /* ChromeFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +141,7 @@
 		F76CA1581ED047A1001B2485 /* CoreImageFilterBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreImageFilterBase.swift; sourceTree = "<group>"; };
 		F76CA15A1ED04841001B2485 /* InstantFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantFilter.swift; sourceTree = "<group>"; };
 		F76CA15C1ED05306001B2485 /* MonoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonoFilter.swift; sourceTree = "<group>"; };
+		F76CA15E1ED057B0001B2485 /* ChromeFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromeFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				F76CA1581ED047A1001B2485 /* CoreImageFilterBase.swift */,
 				F76CA15A1ED04841001B2485 /* InstantFilter.swift */,
 				F76CA15C1ED05306001B2485 /* MonoFilter.swift */,
+				F76CA15E1ED057B0001B2485 /* ChromeFilter.swift */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				EFA7610E1E829434000EB296 /* ItemProvider.swift in Sources */,
 				EF8240281ED0395E005965DC /* ObjectDetectionFilter.swift in Sources */,
 				251E57F91E6565890009A288 /* ExampleView.swift in Sources */,
+				F76CA15F1ED057B0001B2485 /* ChromeFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
