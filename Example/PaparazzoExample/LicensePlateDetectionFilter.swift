@@ -19,6 +19,11 @@ public class LicensePlateDetectionFilter: Filter {
     
     public func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void)){
         
+        if !checkIfCarExist(image: sourceImage) {
+            completion(sourceImage)
+            return
+        }
+        
         if #available(iOS 9.0, *) {
             let context = CIContext()
             let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
@@ -76,12 +81,46 @@ public class LicensePlateDetectionFilter: Filter {
     
     func checkIfCarExist(image: UIImage) -> Bool {
         let semaphore = DispatchSemaphore(value: 1)
+        let array = [
+        "minivan",
+        "beach wagon",
+        "jeep",
+        "pickup",
+        "minibus",
+        "garbage truck",
+        "cab",
+        "tractor",
+        "harvester",
+        "limousine",
+        "ambulance",
+        "fire engine",
+        "steam locomotive",
+        "tow truck",
+        "car wheel",
+        "police van",
+        "trailer truck",
+        "racer",
+        "car mirror",
+        "moving van",
+        "motor scooter",
+        "snowplow",
+        "grille"
+        ]
+        var haveCar = false
         deepBeliefBridge.process(image) { (results: Dictionary) in
+            for (key, element) in results {
+                if let probability = element as? NSNumber,
+                    let name = key as? String {
+                    if array.contains(name) && probability.doubleValue > 0.1 {
+                        haveCar = true
+                    }
+                }
+            }
             semaphore.signal()
         }
         let timeout = DispatchTime.now() + .seconds(2)
         _ = semaphore.wait(timeout: timeout)
-        return false
+        return haveCar
     }
     
     func checkIfPlateExist(image: UIImage) -> Bool {
