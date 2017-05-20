@@ -64,8 +64,8 @@ final class FiltersControlsView: UIView {
         )
         
         discardButton.layout(
-            left: bounds.size.width * 0.25,
-            top: filtersListView.bottom + 10.0,
+            left: bounds.size.width * 0.25 - CGSize.minimumTapAreaSize.width/2 + bounds.left,
+            top: filtersListView.bottom + 5.0,
             width: CGSize.minimumTapAreaSize.width,
             height: CGSize.minimumTapAreaSize.height
         )
@@ -73,7 +73,7 @@ final class FiltersControlsView: UIView {
         confirmButton.layout(
             top: discardButton.top,
             bottom: discardButton.bottom,
-            right: bounds.width - bounds.size.width * 0.25,
+            right: bounds.right * 0.75 + CGSize.minimumTapAreaSize.width/2,
             width: CGSize.minimumTapAreaSize.width
         )
     }
