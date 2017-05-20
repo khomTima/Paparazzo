@@ -5,10 +5,14 @@ final class FiltersView: UIView {
     
     // MARK: - Subviews
     
+    private var longTap: UILongPressGestureRecognizer? = nil
     private let previewView = UIImageView()
     private let controlsView = FiltersControlsView()
     private let titleLabel = UILabel()
     private var image: ImageSource? = nil
+    private var original: ImageSource? = nil
+    private var nonOriginalImage: ImageSource? = nil
+    private var filters = [Filter]()
     
     // MARK: - Constants
     
@@ -28,6 +32,8 @@ final class FiltersView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        self.longTap = UILongPressGestureRecognizer(target: self, action: #selector(showOriginal(_:)))
+        
         backgroundColor = .white
         clipsToBounds = true
         
@@ -36,6 +42,13 @@ final class FiltersView: UIView {
         }
         
         previewView.contentMode = .scaleAspectFit
+        
+        previewView.isUserInteractionEnabled = true
+    
+        longTap?.minimumPressDuration = 0.2
+        if let longTap = longTap {
+            previewView.addGestureRecognizer(longTap)
+        }
         
         addSubview(previewView)
         addSubview(controlsView)
@@ -80,6 +93,10 @@ final class FiltersView: UIView {
     var onConfirmButtonTap: ((_ previewImage: ImageSource?) -> ())?
     
     func setImage(_ image: ImageSource, filters: [Filter]) {
+        self.filters = filters
+        if original == nil {
+            original = image
+        }
         self.image = image
         
         let options = ImageRequestOptions(size: .fullResolution, deliveryMode: .best)
@@ -99,5 +116,22 @@ final class FiltersView: UIView {
     
     func setTitle(_ title: String) {
         titleLabel.text = title
+    }
+    
+    func showOriginal(_ recognizer: UILongPressGestureRecognizer) {
+        switch recognizer.state {
+        case .ended,
+             .cancelled,
+             .failed:
+            if let nonOriginalImage = nonOriginalImage {
+                setImage(nonOriginalImage, filters: filters)
+                self.nonOriginalImage = nil
+            }
+        case .began:
+            nonOriginalImage = image
+            setImage(original!, filters: filters)
+        default:
+            break
+        }
     }
 }
