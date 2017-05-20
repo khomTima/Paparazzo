@@ -11,7 +11,7 @@ import Paparazzo
 
 public class LicensePlateDetectionFilter: Filter {
     
-    public var preview: UIImage = UIImage()
+    public var preview: UIImage = UIImage(named: "nomer")!
     
     public var title: String = "Убрать номер"
     

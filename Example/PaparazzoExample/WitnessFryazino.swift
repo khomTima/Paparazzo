@@ -2,7 +2,7 @@ import Foundation
 import Paparazzo
 
 class WitnessFryazino: Filter {
-    public var preview: UIImage = UIImage()
+    public var preview: UIImage = UIImage(named: "svidetel")!
     
     public var title: String = "Свидетель"
     

@@ -11,7 +11,7 @@ import Paparazzo
 
 public class FaceDetectionFilter: Filter {
     
-    public var preview: UIImage = UIImage()
+    public var preview: UIImage = UIImage(named: "no-face")!
     
     public var title: String = "Убрать лица"
     
