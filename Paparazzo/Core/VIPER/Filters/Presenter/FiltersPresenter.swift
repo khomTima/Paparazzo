@@ -47,24 +47,27 @@ final class FiltersPresenter: FiltersModule {
             
             self.interactor.image.requestImage(options: options) { (result: ImageRequestResult<UIImage>) in
                 if let image = result.image {
-                    filter.apply(result.image!, completion: { image in
-                        
-                        let path = (NSTemporaryDirectory() as NSString).appendingPathComponent("\(UUID().uuidString).jpg")
-                        let url = URL(fileURLWithPath: path)
-                        let destination = CGImageDestinationCreateWithURL(url as CFURL, kUTTypeJPEG, 1, nil)
-                        
-                        if let destination = destination {
-                            guard let cgImage = image.cgImage else { return }
+                    DispatchQueue.global().async {
+                        filter.apply(result.image!, completion: { image in
                             
-                            CGImageDestinationAddImage(destination, cgImage, nil)
+                            let path = (NSTemporaryDirectory() as NSString).appendingPathComponent("\(UUID().uuidString).jpg")
+                            let url = URL(fileURLWithPath: path)
+                            let destination = CGImageDestinationCreateWithURL(url as CFURL, kUTTypeJPEG, 1, nil)
                             
-                            if CGImageDestinationFinalize(destination) {
-                                let imageSource = LocalImageSource(path: path, previewImage: image.cgImage)
-                                self.view?.setImage(imageSource, filters: self.interactor.filters)
+                            if let destination = destination {
+                                guard let cgImage = image.cgImage else { return }
+                                
+                                CGImageDestinationAddImage(destination, cgImage, nil)
+                                
+                                if CGImageDestinationFinalize(destination) {
+                                    let imageSource = LocalImageSource(path: path, previewImage: image.cgImage)
+                                    DispatchQueue.main.async {
+                                        self.view?.setImage(imageSource, filters: self.interactor.filters)
+                                    }
+                                }
                             }
-                        }
-                        
-                    })
+                        })
+                    }
                 }
             }
         }

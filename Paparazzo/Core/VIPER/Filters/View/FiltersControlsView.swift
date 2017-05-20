@@ -59,7 +59,7 @@ final class FiltersControlsView: UIView {
         filtersListView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: bounds.top,
+            top: bounds.top + 5,
             height: 110.0
         )
         

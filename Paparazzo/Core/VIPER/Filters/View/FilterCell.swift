@@ -20,8 +20,8 @@ final class FilterCell: UICollectionViewCell {
         previewImageView.layer.rasterizationScale = UIScreen.main.nativeScale
         previewImageView.layer.cornerRadius = 5.0
         
-        titleLabel.font = UIFont.systemFont(ofSize: 13)
         titleLabel.textAlignment = .center
+        titleLabel.font = isSelected ? UIFont.boldSystemFont(ofSize: 11) : UIFont.systemFont(ofSize: 11)
         
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.main.nativeScale
@@ -42,15 +42,15 @@ final class FilterCell: UICollectionViewCell {
         titleLabel.layout(
             left: bounds.left + 5,
             right: bounds.right - 5,
-            top: bounds.top + 2,
+            top: bounds.top + 5,
             height: titleSize.height
         )
         
         previewImageView.layout(
-            top: titleLabel.bottom + 10.0,
-            bottom: bounds.bottom,
-            left: bounds.left,
-            width: bounds.width
+            top: titleLabel.bottom + 5.0,
+            bottom: bounds.bottom - 5,
+            left: bounds.left + 5,
+            width: bounds.width - 10
         )
     }
     
@@ -64,6 +64,7 @@ final class FilterCell: UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             layer.borderWidth = isSelected ? 4 : 0
+            titleLabel.font = isSelected ? UIFont.boldSystemFont(ofSize: 11) : UIFont.systemFont(ofSize: 11)
         }
     }
     

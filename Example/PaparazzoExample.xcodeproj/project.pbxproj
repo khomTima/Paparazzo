@@ -59,6 +59,8 @@
 		F2F50FD81E6CA160006F9171 /* Latoto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E57EA1E6565890009A288 /* Latoto-Regular.ttf */; };
 		F2F50FD91E6CA160006F9171 /* Latoto-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E57EB1E6565890009A288 /* Latoto-Semibold.ttf */; };
 		F2F50FDA1E6CA160006F9171 /* Latoto-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E57EC1E6565890009A288 /* Latoto-SemiboldItalic.ttf */; };
+		F76CA1531ED03694001B2485 /* TrustworthyAutoStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1521ED03694001B2485 /* TrustworthyAutoStamp.swift */; };
+		F76CA1551ED0371E001B2485 /* transparent-stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = F76CA1541ED0371E001B2485 /* transparent-stamp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +111,8 @@
 		F2F50FCC1E6C9F60006F9171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F50FCF1E6C9F60006F9171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2F50FD11E6C9F60006F9171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F76CA1521ED03694001B2485 /* TrustworthyAutoStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustworthyAutoStamp.swift; sourceTree = "<group>"; };
+		F76CA1541ED0371E001B2485 /* transparent-stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent-stamp.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +146,10 @@
 		18705C5C1ECF28EA00380DF4 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
+				F76CA1541ED0371E001B2485 /* transparent-stamp.png */,
 				18705C5D1ECF290B00380DF4 /* FaceDetectionFilter.swift */,
 				EF8240161ECF5CC8005965DC /* LicensePlateDetectionFilter.swift */,
+				F76CA1521ED03694001B2485 /* TrustworthyAutoStamp.swift */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 				251E57FD1E6565890009A288 /* Latoto-Light.ttf in Resources */,
 				251E57FF1E6565890009A288 /* Latoto-Semibold.ttf in Resources */,
 				251E57FC1E6565890009A288 /* Latoto-Bold.ttf in Resources */,
+				F76CA1551ED0371E001B2485 /* transparent-stamp.png in Resources */,
 				251E58001E6565890009A288 /* Latoto-SemiboldItalic.ttf in Resources */,
 				253169671E65698C006F1E95 /* Assets.xcassets in Resources */,
 				251E57FE1E6565890009A288 /* Latoto-Regular.ttf in Resources */,
@@ -500,7 +507,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		6620037BC3D2966EBE230528 /* [CP] Copy Pods Resources */ = {
@@ -545,7 +552,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BE84EDEE72F665CE084E60AC /* [CP] Embed Pods Frameworks */ = {
@@ -575,7 +582,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E607E68B79D7FA6BB43CDC07 /* [CP] Embed Pods Frameworks */ = {
@@ -633,6 +640,7 @@
 				251E57F01E6565890009A288 /* AppSpecificUITheme.swift in Sources */,
 				EFA7610E1E829434000EB296 /* ItemProvider.swift in Sources */,
 				025478DF1ECF294700D30383 /* FilterDummy.swift in Sources */,
+				F76CA1531ED03694001B2485 /* TrustworthyAutoStamp.swift in Sources */,
 				251E57F91E6565890009A288 /* ExampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
