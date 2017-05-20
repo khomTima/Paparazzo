@@ -77,6 +77,7 @@
 		F76CA1611ED0585E001B2485 /* ProcessFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1601ED0585E001B2485 /* ProcessFilter.swift */; };
 		F76CA1631ED05950001B2485 /* SepiaFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1621ED05950001B2485 /* SepiaFilter.swift */; };
 		F76CA1651ED059B9001B2485 /* VignetteFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1641ED059B9001B2485 /* VignetteFilter.swift */; };
+		F76CA1671ED05BD5001B2485 /* AutoEnhancementFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CA1661ED05BD5001B2485 /* AutoEnhancementFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +149,7 @@
 		F76CA1601ED0585E001B2485 /* ProcessFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessFilter.swift; sourceTree = "<group>"; };
 		F76CA1621ED05950001B2485 /* SepiaFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SepiaFilter.swift; sourceTree = "<group>"; };
 		F76CA1641ED059B9001B2485 /* VignetteFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VignetteFilter.swift; sourceTree = "<group>"; };
+		F76CA1661ED05BD5001B2485 /* AutoEnhancementFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEnhancementFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 				F76CA1601ED0585E001B2485 /* ProcessFilter.swift */,
 				F76CA1621ED05950001B2485 /* SepiaFilter.swift */,
 				F76CA1641ED059B9001B2485 /* VignetteFilter.swift */,
+				F76CA1661ED05BD5001B2485 /* AutoEnhancementFilter.swift */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				EF8240171ECF5CC8005965DC /* LicensePlateDetectionFilter.swift in Sources */,
 				251E57F21E6565890009A288 /* ExampleAssembly.swift in Sources */,
 				251E57F41E6565890009A288 /* ExampleInteractor.swift in Sources */,
+				F76CA1671ED05BD5001B2485 /* AutoEnhancementFilter.swift in Sources */,
 				02F764391ED0475900C21E5C /* WitnessFryazino.swift in Sources */,
 				251E58011E6565890009A288 /* MarshrouteFacade.swift in Sources */,
 				251E58021E6565890009A288 /* NavigationController.swift in Sources */,
