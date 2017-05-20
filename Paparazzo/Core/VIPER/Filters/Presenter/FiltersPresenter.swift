@@ -47,7 +47,7 @@ final class FiltersPresenter: FiltersModule {
             
             self.interactor.image.requestImage(options: options) { (result: ImageRequestResult<UIImage>) in
                 if let image = result.image {
-                    DispatchQueue.global().async {
+                    DispatchQueue.global(priority: .high).async {
                         filter.apply(result.image!, completion: { image in
                             
                             let path = (NSTemporaryDirectory() as NSString).appendingPathComponent("\(UUID().uuidString).jpg")
