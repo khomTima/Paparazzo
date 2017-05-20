@@ -10,7 +10,7 @@ import Foundation
 import Paparazzo
 
 class VignetteFilter: Filter {
-    public var preview: UIImage = UIImage()
+    public var preview: UIImage = UIImage(named: "vinetka")!
     
     public var title: String = "Виньетка"
 

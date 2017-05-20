@@ -11,7 +11,7 @@ import Paparazzo
 
 class TrustworthyAutoStamp: Filter {
 
-    public var preview: UIImage = UIImage()
+    public var preview: UIImage = UIImage(named: "sto")!
     
     public var title: String = "Техосмотр"
     

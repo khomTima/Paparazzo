@@ -10,7 +10,7 @@ import Foundation
 import Paparazzo
 
 class AutoEnhancementFilter: Filter {
-    public var preview: UIImage = UIImage()
+    public var preview: UIImage = UIImage(named: "make-good")!
     
     public var title: String = "Сделать хорошо"
     
