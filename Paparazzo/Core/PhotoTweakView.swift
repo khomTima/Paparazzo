@@ -94,6 +94,10 @@ final class PhotoTweakView: UIView, UIScrollViewDelegate {
         rightMask.isHidden = !visible
     }
     
+    func setImageContentMode(_ contentMode: UIViewContentMode) {
+        scrollView.imageView.contentMode = contentMode
+    }
+    
     var cropAspectRatio = CGFloat(AspectRatio.defaultRatio.widthToHeightRatio()) {
         didSet {
             if cropAspectRatio != oldValue {
@@ -264,7 +268,14 @@ final class PhotoTweakView: UIView, UIScrollViewDelegate {
         
         originalSize = minZoomBounds.size
         
-        scrollView.bounds = minZoomBounds
+        switch scrollView.imageView.contentMode {
+        case .scaleAspectFill:
+            scrollView.bounds = bounds
+        default:
+            scrollView.bounds = minZoomBounds
+        }
+        
+        scrollView.bounds = bounds
         scrollView.center = center
         scrollView.contentSize = scrollView.bounds.size
         

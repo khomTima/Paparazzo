@@ -54,6 +54,10 @@ final class CroppingPreviewView: UIView {
         previewView.setMaskVisible(visible)
     }
     
+    func setImageContentMode(_ contentMode: UIViewContentMode) {
+        previewView.setImageContentMode(contentMode)
+    }
+    
     func setImage(_ image: ImageSource, previewImage: ImageSource?, completion: (() -> ())?) {
         
         if let previewImage = previewImage {

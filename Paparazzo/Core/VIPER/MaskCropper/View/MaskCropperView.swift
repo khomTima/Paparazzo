@@ -29,6 +29,7 @@ final class MaskCropperView: UIView, ThemeConfigurable {
         
         previewView.setGridVisible(false)
         previewView.setMaskVisible(false)
+        previewView.setImageContentMode(.scaleAspectFill)
         previewView.cropAspectRatio = aspectRatio
         
         addSubview(previewView)
