@@ -1,9 +1,5 @@
 import Foundation
 import ImageSource
-import CoreGraphics
-import ImageIO
-import ImageSource
-import MobileCoreServices
 
 final class FiltersPresenter: FiltersModule {
 
@@ -39,32 +35,8 @@ final class FiltersPresenter: FiltersModule {
                 return
             }
             
-            let options = ImageRequestOptions(size: .fullResolution, deliveryMode: .best)
-            
-            self.interactor.image.requestImage(options: options) { (result: ImageRequestResult<UIImage>) in
-                if let image = result.image {
-                    DispatchQueue.global(priority: .high).async {
-                        filter.apply(image, completion: { filteredImage in
-                            
-                            let path = (NSTemporaryDirectory() as NSString).appendingPathComponent("\(UUID().uuidString).jpg")
-                            let url = URL(fileURLWithPath: path)
-                            let destination = CGImageDestinationCreateWithURL(url as CFURL, kUTTypeJPEG, 1, nil)
-                            
-                            if let destination = destination {
-                                guard let cgImage = filteredImage.cgImage else { return }
-                                
-                                CGImageDestinationAddImage(destination, cgImage, nil)
-                                
-                                if CGImageDestinationFinalize(destination) {
-                                    let imageSource = LocalImageSource(path: path, previewImage: cgImage)
-                                    DispatchQueue.main.async {
-                                        self.view?.setImage(imageSource, filters: self.interactor.filters)
-                                    }
-                                }
-                            }
-                        })
-                    }
-                }
+            self.interactor.apply(filter: filter) { resultImage in
+                self.view?.setImage(resultImage, filters: self.interactor.filters)
             }
         }
         
@@ -73,6 +45,25 @@ final class FiltersPresenter: FiltersModule {
                 self?.onConfirm?(previewImage)
             } else {
                 self?.onDiscard?()
+            }
+        }
+        
+        view?.onLongTap = { [weak self] recognizerState in
+            guard let `self` = self else {
+                return
+            }
+            
+            switch recognizerState {
+            case .ended,
+                 .cancelled,
+                 .failed:
+                if let nonOriginalImage = self.interactor.modifiedImage {
+                    self.view?.setImage(nonOriginalImage, filters: self.interactor.filters)
+                }
+            case .began:
+                self.view?.setImage(self.interactor.image, filters: self.interactor.filters)
+            default:
+                break
             }
         }
         

@@ -11,6 +11,12 @@ final class FiltersViewController: UIViewController, FiltersViewInput {
         }
     }
     
+    var onLongTap: ((_ recogniserState: UIGestureRecognizerState) -> Void)? {
+        didSet {
+            filtersView.setOnLongTap(onLongTap)
+        }
+    }
+    
     // MARK: - UIViewController
     override func loadView() {
         view = filtersView

@@ -3,15 +3,15 @@ import UIKit
 
 final class FiltersView: UIView {
     
+    typealias OnLongTap = ((_ recogniserState: UIGestureRecognizerState) -> Void)?
+    
     // MARK: - Subviews
     private var longTap: UILongPressGestureRecognizer? = nil
     private let previewView = UIImageView()
     private let controlsView = FiltersControlsView()
     private let titleLabel = UILabel()
     private var image: ImageSource? = nil
-    private var original: ImageSource? = nil
-    private var nonOriginalImage: ImageSource? = nil
-    private var filters = [Filter]()
+    private var onLongTap: OnLongTap
     
     // MARK: - Constants
     private let controlsMinHeight: CGFloat = {
@@ -29,7 +29,7 @@ final class FiltersView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.longTap = UILongPressGestureRecognizer(target: self, action: #selector(showOriginal(_:)))
+        self.longTap = UILongPressGestureRecognizer(target: self, action: #selector(onLongTap(_:)))
         
         backgroundColor = .white
         clipsToBounds = true
@@ -89,10 +89,6 @@ final class FiltersView: UIView {
     var onConfirmButtonTap: ((_ previewImage: ImageSource?) -> ())?
     
     func setImage(_ image: ImageSource, filters: [Filter]) {
-        self.filters = filters
-        if original == nil {
-            original = image
-        }
         self.image = image
         
         let options = ImageRequestOptions(size: .fullResolution, deliveryMode: .best)
@@ -105,6 +101,10 @@ final class FiltersView: UIView {
             }
         }
     }
+    
+    func setOnLongTap(_ onLongTap: OnLongTap) {
+        self.onLongTap = onLongTap
+    }
 
     func setTheme(_ theme: FiltersUITheme) {
         controlsView.setTheme(theme)
@@ -114,22 +114,8 @@ final class FiltersView: UIView {
         titleLabel.text = title
     }
     
-    func showOriginal(_ recognizer: UILongPressGestureRecognizer) {
-        switch recognizer.state {
-        case .ended,
-             .cancelled,
-             .failed:
-            if let nonOriginalImage = nonOriginalImage {
-                setImage(nonOriginalImage, filters: filters)
-                self.nonOriginalImage = nil
-            }
-        case .began:
-            if let originalImage = original {
-                nonOriginalImage = image
-                setImage(originalImage, filters: filters)
-            }
-        default:
-            break
-        }
+    // MARK: - Private
+    @objc private func onLongTap(_ recognizer: UILongPressGestureRecognizer) {
+        onLongTap?(recognizer.state)
     }
 }
