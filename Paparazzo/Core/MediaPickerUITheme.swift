@@ -132,6 +132,7 @@ public protocol FiltersUITheme {
     
     var discardIcon: UIImage? { get }
     var confirmIcon: UIImage? { get }
+    var filtersIcon: UIImage? { get }
     var filterItemSelectionColor: UIColor { get }
     var filterTitleFont: UIFont { get }
 }

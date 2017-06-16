@@ -94,6 +94,9 @@ final class MediaPickerPresenter: MediaPickerModule {
             self?.view?.setLatestLibraryPhoto(image)
         }
         
+        self?.view?.setFiltersButtonVisible(self?.interactor.filters?.isEmpty == false)
+        
+        
         interactor.items { items, canAddMoreItems in
             guard items.count > 0 else { return }
             

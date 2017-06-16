@@ -69,7 +69,6 @@ final class FilterCell: UICollectionViewCell {
     }
     
     // MARK: - Private
-    
     private func adjustBorderColor() {
         layer.borderColor = selectedBorderColor?.cgColor
     }

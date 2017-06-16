@@ -352,6 +352,10 @@ final class MediaPickerViewController: UIViewController, MediaPickerViewInput {
         mediaPickerView.setShowsCropButton(showsCropButton)
     }
     
+    func setFiltersButtonVisible(_ visible: Bool) {
+        mediaPickerView.setFiltersButtonVisible(visible)
+    }
+    
     // MARK: - Private
     
     func layoutMediaPickerView(interfaceOrientation: UIInterfaceOrientation) {

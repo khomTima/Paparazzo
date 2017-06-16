@@ -4,7 +4,6 @@ import UIKit
 final class FiltersView: UIView {
     
     // MARK: - Subviews
-    
     private var longTap: UILongPressGestureRecognizer? = nil
     private let previewView = UIImageView()
     private let controlsView = FiltersControlsView()
@@ -15,7 +14,6 @@ final class FiltersView: UIView {
     private var filters = [Filter]()
     
     // MARK: - Constants
-    
     private let controlsMinHeight: CGFloat = {
         let iPhone5ScreenSize = CGSize(width: 320, height: 568)
         return iPhone5ScreenSize.height - iPhone5ScreenSize.width / 0.75
@@ -28,7 +26,6 @@ final class FiltersView: UIView {
     }
     
     // MARK: - Init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -61,7 +58,6 @@ final class FiltersView: UIView {
     }
     
     // MARK: - UIView
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -85,7 +81,6 @@ final class FiltersView: UIView {
     }
     
     // MARK: - FiltersView
-    
     var onDiscardButtonTap: (() -> ())? {
         get { return controlsView.onDiscardButtonTap }
         set { controlsView.onDiscardButtonTap = newValue }
@@ -129,8 +124,10 @@ final class FiltersView: UIView {
                 self.nonOriginalImage = nil
             }
         case .began:
-            nonOriginalImage = image
-            setImage(original!, filters: filters)
+            if let originalImage = original {
+                nonOriginalImage = image
+                setImage(originalImage, filters: filters)
+            }
         default:
             break
         }

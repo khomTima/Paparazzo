@@ -43,7 +43,7 @@ final class MediaPickerView: UIView {
     
     // MARK: - UIView
     
-    override init(frame: CGRect) {
+    init() {
         
         thumbnailRibbonView = ThumbnailsView()
         photoPreviewView = PhotoPreviewView()
@@ -274,6 +274,14 @@ final class MediaPickerView: UIView {
     
     func setFlashButtonOn(_ isOn: Bool) {
         cameraControlsView.setFlashButtonOn(isOn)
+    }
+    
+    func setFiltersButtonVisible(_ visible: Bool) {
+        if visible {
+            photoControlsView.mode.insert(.hasFiltersButton)
+        } else {
+            photoControlsView.mode.remove(.hasFiltersButton)
+        }
     }
     
     func animateFlash() {

@@ -57,7 +57,6 @@ final class FiltersListView: UIView, UICollectionViewDelegate, UICollectionViewD
     }
     
     // MARK: - UICollectionViewDelegate
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let filter = filters[indexPath.row]
         selectedFilter = filter

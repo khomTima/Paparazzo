@@ -12,7 +12,6 @@ final class FiltersViewController: UIViewController, FiltersViewInput {
     }
     
     // MARK: - UIViewController
-    
     override func loadView() {
         view = filtersView
     }
@@ -34,7 +33,6 @@ final class FiltersViewController: UIViewController, FiltersViewInput {
     }
     
     // MARK: - FiltersViewInput
-    
     @nonobjc func setTitle(_ title: String) {
         filtersView.setTitle(title)
     }
@@ -54,13 +52,11 @@ final class FiltersViewController: UIViewController, FiltersViewInput {
     }
     
     // MARK: - FiltersViewController
-    
     func setTheme(_ theme: FiltersUITheme) {
         filtersView.setTheme(theme)
     }
     
     // MARK: - Dispose bag
-    
     private var disposables = [AnyObject]()
     
     func addDisposable(_ object: AnyObject) {
@@ -69,7 +65,6 @@ final class FiltersViewController: UIViewController, FiltersViewInput {
     
     
     // MARK: - Private
-    
     private func forcePortraitOrientation() {        
         let initialDeviceOrientation = UIDevice.current.orientation
         let targetDeviceOrientation = UIDeviceOrientation.portrait

@@ -24,6 +24,7 @@ final class PhotoControlsView: UIView {
     
     override init(frame: CGRect) {
         self.mode = .allButtons
+        
         super.init(frame: frame)
         
         backgroundColor = .white

@@ -3,7 +3,6 @@ import UIKit
 final class FiltersControlsView: UIView {
     
     // MARK: - Subviews
-    
     private let discardButton = UIButton()
     private let confirmButton = UIButton()
     private var filtersListView = FiltersListView()
@@ -17,13 +16,11 @@ final class FiltersControlsView: UIView {
     var filters = [Filter]() {
         didSet {
             filtersListView.filters = filters
+            setNeedsLayout()
         }
     }
     
-    // MARK: - Constants
-    
     // MARK: - Init
-    
     init() {
         
         super.init(frame: .zero)
@@ -52,7 +49,6 @@ final class FiltersControlsView: UIView {
     }
     
     // MARK: - UIView
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -79,7 +75,6 @@ final class FiltersControlsView: UIView {
     }
     
     // MARK: - FiltersControlsView
-    
     var onDiscardButtonTap: (() -> ())?
     var onConfirmButtonTap: (() -> ())?
     
@@ -91,7 +86,6 @@ final class FiltersControlsView: UIView {
     }
     
     // MARK: - Private
-    
     @objc private func onDiscardButtonTap(_: UIButton) {
         onDiscardButtonTap?()
     }

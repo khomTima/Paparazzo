@@ -8,7 +8,6 @@ import MobileCoreServices
 final class FiltersPresenter: FiltersModule {
 
     // MARK: - Dependencies
-    
     private var interactor: FiltersInteractor
     
     weak var view: FiltersViewInput? {
@@ -18,18 +17,15 @@ final class FiltersPresenter: FiltersModule {
     }
 
     // MARK: - Init
-
     init(interactor: FiltersInteractor) {
         self.interactor = interactor
     }
     
     // MARK: - FiltersModule
-    
     var onDiscard: (() -> ())?
     var onConfirm: ((ImageSource) -> ())?
     
     // MARK: - Private
-    
     private func setUpView() {
         
         view?.setTitle("Фильтры")
@@ -48,19 +44,19 @@ final class FiltersPresenter: FiltersModule {
             self.interactor.image.requestImage(options: options) { (result: ImageRequestResult<UIImage>) in
                 if let image = result.image {
                     DispatchQueue.global(priority: .high).async {
-                        filter.apply(result.image!, completion: { image in
+                        filter.apply(image, completion: { filteredImage in
                             
                             let path = (NSTemporaryDirectory() as NSString).appendingPathComponent("\(UUID().uuidString).jpg")
                             let url = URL(fileURLWithPath: path)
                             let destination = CGImageDestinationCreateWithURL(url as CFURL, kUTTypeJPEG, 1, nil)
                             
                             if let destination = destination {
-                                guard let cgImage = image.cgImage else { return }
+                                guard let cgImage = filteredImage.cgImage else { return }
                                 
                                 CGImageDestinationAddImage(destination, cgImage, nil)
                                 
                                 if CGImageDestinationFinalize(destination) {
-                                    let imageSource = LocalImageSource(path: path, previewImage: image.cgImage)
+                                    let imageSource = LocalImageSource(path: path, previewImage: cgImage)
                                     DispatchQueue.main.async {
                                         self.view?.setImage(imageSource, filters: self.interactor.filters)
                                     }
