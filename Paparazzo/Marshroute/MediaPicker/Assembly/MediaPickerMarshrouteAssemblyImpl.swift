@@ -20,7 +20,7 @@ public final class MediaPickerMarshrouteAssemblyImpl: MediaPickerMarshrouteAssem
     
     public func module(
         items: [MediaPickerItem],
-        filters: [Filter]?,
+        filters: [Filter]? = nil,
         selectedItem: MediaPickerItem?,
         maxItemsCount: Int?,
         cropEnabled: Bool,

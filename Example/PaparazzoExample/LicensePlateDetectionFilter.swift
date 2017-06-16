@@ -1,17 +1,9 @@
-//
-//  LicensePlateDetectionFilter.swift
-//  PaparazzoExample
-//
-//  Created by Смаль Вадим on 19/05/2017.
-//  Copyright © 2017 Avito. All rights reserved.
-//
-
 import Foundation
 import Paparazzo
 
 public class LicensePlateDetectionFilter: Filter {
     
-    public var preview: UIImage = UIImage(named: "nomer")!
+    public var preview: UIImage = UIImage(named: "nomer") ?? UIImage()
     
     public var title: String = "Убрать номер"
     
@@ -72,7 +64,7 @@ public class LicensePlateDetectionFilter: Filter {
             
             let resultImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
-            completion(resultImage!)
+            completion(resultImage ?? sourceImage)
         } else {
             completion(sourceImage)
         }

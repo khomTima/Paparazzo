@@ -1,28 +1,20 @@
-//
-//  CoreImageFilterBase.swift
-//  PaparazzoExample
-//
-//  Created by Толстой Егор on 20/05/2017.
-//  Copyright © 2017 Avito. All rights reserved.
-//
-
 import Foundation
 import Paparazzo
 
 class CoreImageFilterBase: Filter {
-    public var preview: UIImage
+    public var preview: UIImage?
     
     public var title: String
     
     private var ciFilterName: String
     
-    init(ciFilterName: String, preview: UIImage, title: String) {
+    init(ciFilterName: String, preview: UIImage?, title: String) {
         self.ciFilterName = ciFilterName
-        self.preview = preview
+        self.preview = preview ?? UIImage()
         self.title = title
     }
     
-    public func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void)){
+    public func apply(_ sourceImage: UIImage, completion: @escaping ((_ resultImage: UIImage) -> Void)) {
         let context = CIContext(options: nil)
         
         if let currentFilter = CIFilter(name: self.ciFilterName) {

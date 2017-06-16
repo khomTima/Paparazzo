@@ -2,7 +2,7 @@ import Foundation
 import Paparazzo
 
 class WitnessFryazino: Filter {
-    public var preview: UIImage = UIImage(named: "svidetel")!
+    public var preview: UIImage = UIImage(named: "svidetel") ?? UIImage()
     
     public var title: String = "Свидетель"
     
@@ -95,10 +95,10 @@ class WitnessFryazino: Filter {
         
         stamp.draw(in: stampRect)
         
-        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        completion(newImage)
+        completion(newImage ?? sourceImage)
     }
     
     func haveFace(sourceImage: UIImage) -> (has: Bool, rect: CGRect?) {
@@ -141,9 +141,6 @@ class WitnessFryazino: Filter {
             faceRect.size.height += 140
             faceRect.origin.y -= 80
             faceRect.origin.x -= 20
-            
-            
-            
         }
         
         return (true, faceRect)

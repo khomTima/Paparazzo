@@ -1,17 +1,9 @@
-//
-//  TrustworthyAutoStamp.swift
-//  PaparazzoExample
-//
-//  Created by Толстой Егор on 20/05/2017.
-//  Copyright © 2017 Avito. All rights reserved.
-//
-
 import Foundation
 import Paparazzo
 
 class TrustworthyAutoStamp: Filter {
 
-    public var preview: UIImage = UIImage(named: "sto")!
+    public var preview: UIImage = UIImage(named: "sto") ?? UIImage()
     
     public var title: String = "Техосмотр"
     
@@ -37,9 +29,9 @@ class TrustworthyAutoStamp: Filter {
                                     height: stampSideSize)
         stamp?.draw(in: stampRect)
         
-        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        completion(newImage)
+        completion(newImage ?? sourceImage)
     }
 }

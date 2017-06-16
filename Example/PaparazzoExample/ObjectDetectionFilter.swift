@@ -1,11 +1,3 @@
-//
-//  ObjectDetectionFilter.swift
-//  PaparazzoExample
-//
-//  Created by Смаль Вадим on 20/05/2017.
-//  Copyright © 2017 Avito. All rights reserved.
-//
-
 import Foundation
 import Paparazzo
 
@@ -40,8 +32,10 @@ public class ObjectDetectionFilter: Filter {
     func textToImage(drawText: NSString, inImage: UIImage, atPoint: CGPoint) -> UIImage{
         
         // Setup the font specific variables
+        guard let textFont = UIFont(name: "Helvetica Bold", size: max(inImage.size.width, inImage.size.height) / 20) else {
+            return inImage
+        }
         let textColor = UIColor.white
-        let textFont = UIFont(name: "Helvetica Bold", size: max(inImage.size.width, inImage.size.height) / 20)!
         
         // Setup the image context using the passed image
         let scale = UIScreen.main.scale
@@ -70,7 +64,7 @@ public class ObjectDetectionFilter: Filter {
         UIGraphicsEndImageContext()
         
         //Pass the image back up to the caller
-        return newImage!
+        return newImage ?? inImage
         
     }
     

@@ -1,17 +1,9 @@
-//
-//  FaceDetectionFilter.swift
-//  PaparazzoExample
-//
-//  Created by Щукин Алексей on 19/05/2017.
-//  Copyright © 2017 Avito. All rights reserved.
-//
-
 import Foundation
 import Paparazzo
 
 public class FaceDetectionFilter: Filter {
     
-    public var preview: UIImage = UIImage(named: "no-face")!
+    public var preview: UIImage = UIImage(named: "no-face") ?? UIImage()
     
     public var title: String = "Убрать лица"
     
@@ -62,7 +54,7 @@ public class FaceDetectionFilter: Filter {
             let resultImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             DispatchQueue.main.async {
-                completion(resultImage!)
+                completion(resultImage ?? sourceImage)
             }
         }
         

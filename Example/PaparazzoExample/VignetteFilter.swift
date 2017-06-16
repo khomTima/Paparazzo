@@ -1,16 +1,8 @@
-//
-//  VignetteFilter.swift
-//  PaparazzoExample
-//
-//  Created by Толстой Егор on 20/05/2017.
-//  Copyright © 2017 Avito. All rights reserved.
-//
-
 import Foundation
 import Paparazzo
 
 class VignetteFilter: Filter {
-    public var preview: UIImage = UIImage(named: "vinetka")!
+    public var preview: UIImage = UIImage(named: "vinetka") ?? UIImage()
     
     public var title: String = "Виньетка"
 
