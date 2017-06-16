@@ -1,11 +1,3 @@
-//
-//  UIImage+Transform.swift
-//  PaparazzoExample
-//
-//  Created by Смаль Вадим on 19/05/2017.
-//  Copyright © 2017 Avito. All rights reserved.
-//
-
 import UIKit
 import Accelerate
 public extension UIImage {

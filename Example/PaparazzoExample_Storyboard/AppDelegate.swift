@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  PaparazzoExample_Storyboard
-//
-//  Created by HiveHicks on 05.03.17.
-//  Copyright © 2017 Avito. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

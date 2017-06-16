@@ -1,11 +1,3 @@
-//
-//  DeepBeliefBridge.h
-//  PaparazzoExample
-//
-//  Created by Смаль Вадим on 20/05/2017.
-//  Copyright © 2017 Avito. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
